@@ -1,0 +1,10 @@
+S. no.,Name,Min_Temperature,Max_Temperature,Min_Rainfall,Max_Rainfall,Category_pH,Min_pH,Max_pH,Soil_Type,Fertility,Min_Light_Hours,Max_Light_Hours,Photoperiod,Min_Light_Intensity,Max_Light_Intensity,Min_Rh,Max_Rh,N-P-K Ratio,Min_Nitrogen,Max_Nitrogen,Min_Phosphorus,Max_Phosphorus,Min_Potassium,Max_Potassium,Season,Min_Yield,Max_Yield
+1,Arugula ,15,25,500,900,"neutral, low_alkaline",7,8,Loamy,Moderate,10,12,"Short Day Period, Day Neutral",200,350,30,40,10:10:10,150,170,320,360,150,170,"Spring, Fall",5,9
+2,Beet,15,25,600,800,"low_acidic, neutral",6,7,Sandy loam,High,6,7,Short Day Period,100,150,98,100,75:37.5:37.5,100,140,140,180,80,120,"Spring, Fall",43.051,67.15
+4,Chard,18,26,600,800,"low_acidic, neutral",6,7,"Loamy, Sandy loam",High,12,14,"Short Day Period, Day Neutral",884,978,40,50,05:10:10,110,220,160,330,220,440,"Spring, Summer, Fall",20,30
+5,Cress,14,21,1000,1800,"low_acidic, neutral",6,7,Loamy,High,10,12,"Short Day Period, Day Neutral",200,400,40,50,05:10:05,70,140,70,140,70,140,"Spring, Fall",0.8,2
+6,Endive ,15,23,1000,1400,"low_acidic, neutral, low_alkaline",6.5,7.8,Loamy,High,12,14,"Short Day Period, Day Neutral",200,300,40,60,22:12:13,40,65,85,170,115,230,"Spring, Fall",16.32,22.6
+7,Kale,15,22,450,1000,low_acidic,5.4,6,Loamy,High,8,12,"Short Day Period, Day Neutral",70,90,90,98,10:10:10,150,200,50,70,100,150,"Winter, Spring, Summer, Fall",15,20
+8,Lettuce,12,21,1100,1400,"low_acidic, neutral",6,7,"Sandy loam, Loamy",Moderate,12,16,"Day Neutral, Long Day Period",350,600,50,70,08:15:36,130,150,40,50,200,260,"Spring, Fall",20,25
+9,Radicchio,10,30,1500,2500,"low_acidic, neutral, low_alkaline",6,7.5,Loamy,Moderate,5,8,Short Day Period,100,300,90,98,13:13:13,120,140,35,45,70,100,"Spring, Fall",2,5
+10,Spinach,13,20,800,1200,"low_acidic, neutral, low_alkaline",6,7.5,Sandy loam,High,10,14,"Short Day Period, Day Neutral",190,240,40,70,10:10:10,110,130,60,80,55,65,"Spring, Fall",12,17
