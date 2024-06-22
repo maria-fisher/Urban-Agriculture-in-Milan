@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 To run the experiment, run command
 ```
-python urban_farming_model.py
+python model.py
 ```
 
 # Step 4
