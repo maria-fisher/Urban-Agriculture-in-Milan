@@ -4,4 +4,4 @@ conda_env: conda.yaml
 
 entry_points:
   main:
-    command: "python urban_farming_model.py"
+    command: "python xgb_model.py"
