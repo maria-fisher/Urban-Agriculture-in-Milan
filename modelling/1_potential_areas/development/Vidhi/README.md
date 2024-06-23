@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 To run the experiment, run command
 ```
-python model.py
+python xgb_model.py
 ```
 
 # Step 4
