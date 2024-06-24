@@ -5,6 +5,7 @@ import numpy as np
 import requests
 import pickle
 
+
 # Load the trained model
 model_path =r"C:\Users\rampr\Documents\Urban-Agriculture-in-Milan\web_app\2_crops_suitable\app\predictingyield.pkl"
 with open(model_path, 'rb') as file:
@@ -79,4 +80,15 @@ col1, col2, col3 = st.columns([1, 2, 1])
 #with col1,col2,col3:
 if st.button("Predict"):
         prediction = model.predict(features)
+        # Display prediction in a beautiful box
+        st.subheader('Predicted Crop Yield')
         st.write(f"## Predicted Yield: {prediction[0]}")
+
+
+
+
+
+
+#if __name__ == '__main__':
+   # st.run()
+
