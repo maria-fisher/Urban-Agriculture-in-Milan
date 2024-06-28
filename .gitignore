@@ -3,3 +3,4 @@ eda/.DS_Store
 .DS_Store
 eda/2_crops_suitable/notebooks/.DS_Store
 .DS_Store
+__pycache__

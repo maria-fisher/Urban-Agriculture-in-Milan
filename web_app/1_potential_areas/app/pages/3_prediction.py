@@ -2,6 +2,15 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+from pathlib import Path
+
+
+def load_model(model_path):
+    """Function to load a model from a given path."""
+    with open(model_path, "rb") as file:
+        model = pickle.load(file)
+    return model
+
 
 # Function to preprocess inputs
 def preprocess_inputs(longitude, latitude, landuse, NDVI, NDBI, NDWI, Roughness, SAVI, Slope, SMI, solar_radiation):
@@ -23,9 +32,31 @@ def preprocess_inputs(longitude, latitude, landuse, NDVI, NDBI, NDWI, Roughness,
 
     return df
 
+def display_classification_result(prediction, prediction_proba):
+    """Function to display the classification result and probabilities."""
+    st.subheader("Classification Result")
+    if prediction[0] == 1:
+        st.success("The area is suitable for urban farming!")
+        st.subheader("Prediction Probability")
+        st.write(f"Probability of being suitable: {prediction_proba[0][1]:.2f}")
+    else:
+        st.error("The area is not suitable for urban farming.")
+        st.subheader("Prediction Probability")
+        st.write(f"Probability of being not suitable: {prediction_proba[0][0]:.2f}")
+
+
+def display_clustering_result(cluster):
+    """Function to display the clustering result."""
+    st.subheader("Clustering Result")
+    if cluster[0] == 1:
+        st.write("The area is suitable for urban farming!")
+    else:
+        st.error("The area is not suitable for urban farming.")
+
+
 # Function for Model/Prediction Page
 def prediction_page():
-    col1, col2, col3, col4 = st.columns([1,1,3,1], gap='medium')
+    col1, col2, col3, col4 = st.columns([1, 1, 3, 1], gap="medium")
 
     with col1:
         st.page_link(r"pages/1_home.py", label="Home", icon="🏠")
@@ -41,8 +72,9 @@ def prediction_page():
 
     st.subheader("Input Features")
 
-    # Numerical Inputs 
-    NDVI, NDBI, NDWI, Roughness, SAVI, Slope, SMI, solar_radiation = [0]*8
+    # Numerical Inputs
+    NDVI, NDBI, NDWI, Roughness, SAVI, Slope, SMI, solar_radiation = [0] * 8
+
     # Categorical Inputs
     landuse = ''
 
@@ -73,39 +105,30 @@ def prediction_page():
         solar_radiation = st.number_input("Solar Radiation", min_value=0.0, max_value=1000.0, step=1.0)
 
     # Add model selection
-    model_choice = st.selectbox("Select Model", ["Supervised Model: XGBClassifier", "Unsupervised Model: K-means Clustering"])
+    models = [
+        "Supervised Model: XGBClassifier",
+        "Unsupervised Model: K-means Clustering",
+    ]
+    model_choice = st.selectbox("Select Model", models)
 
     if st.button("Classify"):
         input_data = preprocess_inputs(latitude, longitude, landuse, NDVI, NDBI, NDWI, Roughness, SAVI, Slope, SMI, solar_radiation)
 
-        if model_choice == "Supervised Model: XGBClassifier":
+        models_dir = Path("models")
+        if model_choice == models[0]:
             # Load pre-trained XGBClassifier model
-            with open(r'models\urban_farming_supervised_model.pkl', 'rb') as file:
-                model = pickle.load(file)
+            model_path = models_dir.joinpath("urban_farming_supervised_model.pkl")
+            model = load_model(model_path)
             prediction = model.predict(input_data)
             prediction_proba = model.predict_proba(input_data)
+            display_classification_result(prediction, prediction_proba)
 
-            st.subheader("Classification Result")
-            if prediction[0] == 1:
-                st.success("The area is suitable for urban farming!")
-                st.subheader("Prediction Probability")
-                st.write(f"Probability of being suitable: {prediction_proba[0][1]:.2f}")
-            else:
-                st.error("The area is not suitable for urban farming.")
-                st.subheader("Prediction Probability")
-                st.write(f"Probability of being not suitable: {prediction_proba[0][0]:.2f}")
-
-        elif model_choice == "Unsupervised Model: K-means Clustering":
+        elif model_choice == models[1]:
             # Load K-means model
-            with open('kmeans_model.pkl', 'rb') as file:
-                model = pickle.load(file)
-
+            model_path = models_dir.joinpath("kmeans_model.pkl")
+            model = load_model(model_path)
             cluster = model.predict(input_data)
-            st.subheader("Clustering Result")
-            if cluster[0] == 1:
-                st.write(f"The area is suitable for urban farming!")
-            else:
-                st.error("The area is not suitable for urban farming.")
+            display_clustering_result(cluster)
 
 
 if __name__ == "__main__":
