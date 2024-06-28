@@ -32,7 +32,6 @@ def preprocess_inputs(longitude, latitude, landuse, NDVI, NDBI, NDWI, Roughness,
 
     return df
 
-
 def display_classification_result(prediction, prediction_proba):
     """Function to display the classification result and probabilities."""
     st.subheader("Classification Result")
@@ -64,11 +63,7 @@ def prediction_page():
     with col2:
         st.page_link(r"pages/2_eda.py", label="EDA", icon="📶")
     with col3:
-        st.page_link(
-            r"pages/3_prediction.py",
-            label="Find Suitable Area for Uraban Farming",
-            icon="🤖",
-        )
+        st.page_link(r"pages/3_prediction.py", label="Find Suitable Area for Uraban Farming", icon="🤖")
     with col4:
         st.page_link(r"pages/4_contact.py", label="Contact Us", icon="📧")
 
@@ -79,6 +74,7 @@ def prediction_page():
 
     # Numerical Inputs
     NDVI, NDBI, NDWI, Roughness, SAVI, Slope, SMI, solar_radiation = [0] * 8
+
     # Categorical Inputs
     landuse = ''
 
