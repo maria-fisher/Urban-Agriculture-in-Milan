@@ -2,6 +2,14 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import pickle
+from pathlib import Path
+
+
+def load_model(model_path):
+    """Function to load a model from a given path."""
+    with open(model_path, 'rb') as file:
+        model = pickle.load(file)
+    return model
 
 # Function to preprocess inputs
 def preprocess_inputs(longitude, latitude, landuse, NDVI, NDBI, NDWI, Roughness, SAVI, Slope, SMI, solar_radiation):
@@ -98,20 +106,19 @@ def prediction_page():
 
     if st.button("Classify"):
         input_data = preprocess_inputs(latitude, longitude, landuse, NDVI, NDBI, NDWI, Roughness, SAVI, Slope, SMI, solar_radiation)
-
+        models_dir = Path("models")
         if model_choice == models[0]:
             # Load pre-trained XGBClassifier model
-            with open(r'models\urban_farming_supervised_model.pkl', 'rb') as file:
-                model = pickle.load(file)
+            model_path = models_dir.joinpath('urban_farming_supervised_model.pkl')
+            model = load_model(model_path)
             prediction = model.predict(input_data)
             prediction_proba = model.predict_proba(input_data)
             display_classification_result(prediction, prediction_proba)
 
         elif model_choice == models[1]:
             # Load K-means model
-            with open('kmeans_model.pkl', 'rb') as file:
-                model = pickle.load(file)
-
+            model_path = models_dir.joinpath('kmeans_model.pkl')
+            model = load_model(model_path)
             cluster = model.predict(input_data)
             display_clustering_result(cluster)
 
