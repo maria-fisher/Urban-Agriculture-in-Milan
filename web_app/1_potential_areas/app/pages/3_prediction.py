@@ -13,32 +13,20 @@ def load_model(model_path):
 
 
 # Function to preprocess inputs
-def preprocess_inputs(
-    longitude,
-    latitude,
-    landuse,
-    NDVI,
-    NDBI,
-    NDWI,
-    Roughness,
-    SAVI,
-    Slope,
-    SMI,
-    solar_radiation,
-):
+def preprocess_inputs(longitude, latitude, landuse, NDVI, NDBI, NDWI, Roughness, SAVI, Slope, SMI, solar_radiation):
     # Create a DataFrame with the inputs
     data = {
-        "longitude": [longitude],
-        "latitude": [latitude],
-        "landuse": [landuse.lower()],
-        "NDVI": [NDVI],
-        "NDBI": [NDBI],
-        "NDWI": [NDWI],
-        "Roughness": [Roughness],
-        "SAVI": [SAVI],
-        "Slope": [Slope],
-        "SMI": [SMI],
-        "solar_radiation": [solar_radiation],
+        'longitude': [longitude],
+        'latitude': [latitude],
+        'landuse': [landuse.lower()],
+        'NDVI': [NDVI],
+        'NDBI': [NDBI],
+        'NDWI': [NDWI],
+        'Roughness': [Roughness],
+        'SAVI': [SAVI],
+        'Slope': [Slope],
+        'SMI': [SMI],
+        'solar_radiation': [solar_radiation]
     }
     df = pd.DataFrame(data)
 
@@ -92,78 +80,33 @@ def prediction_page():
     # Numerical Inputs
     NDVI, NDBI, NDWI, Roughness, SAVI, Slope, SMI, solar_radiation = [0] * 8
     # Categorical Inputs
-    landuse = ""
+    landuse = ''
 
-    landuse_catgories = [
-        "farmland",
-        "allotments",
-        "residential",
-        "industrial",
-        "grass",
-        "farmyard",
-        "meadow",
-        "forest",
-        "construction",
-        "commercial",
-        "village_green",
-        "railway",
-        "retail",
-        "plant_nursery",
-        "brownfield",
-        "recreation_ground",
-        "religious",
-    ]
-    landuse_catgories = [
-        str.capitalize(landuse_catgory) for landuse_catgory in landuse_catgories
-    ]
+    landuse_catgories = ['farmland', 'allotments', 'residential', 'industrial',
+                    'grass', 'farmyard', 'meadow', 'forest', 'construction',
+                    'commercial', 'village_green', 'railway', 'retail',
+                    'plant_nursery', 'brownfield', 'recreation_ground', 'religious']
+    landuse_catgories = [str.capitalize(landuse_catgory) for landuse_catgory in landuse_catgories]
 
     # Take inputs from user
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        longitude = st.number_input(
-            "Longitude",
-            min_value=9.096116,
-            max_value=9.351058,
-            step=0.00000000000001,
-            format="%.15f",
-        )
-        latitude = st.number_input(
-            "Latitude",
-            min_value=45.354995,
-            max_value=45.535018,
-            step=0.00000000000001,
-            format="%.15f",
-        )
+        longitude = st.number_input("Longitude", min_value=9.096116, max_value=9.351058, step=0.00000000000001, format="%.15f")
+        latitude = st.number_input("Latitude", min_value=45.354995, max_value=45.535018, step=0.00000000000001, format="%.15f")
         landuse = st.selectbox("Landuse Type", landuse_catgories)
-        NDVI = st.number_input(
-            "NDVI", min_value=-1.0, max_value=1.0, step=0.0000001, format="%.7f"
-        )
-
+        NDVI = st.number_input("NDVI", min_value=-1.0, max_value=1.0, step=0.0000001, format="%.7f")
+    
     with col2:
-        NDBI = st.number_input(
-            "NDBI", min_value=-1.0, max_value=1.0, step=0.0000001, format="%.7f"
-        )
-        NDWI = st.number_input(
-            "NDWI", min_value=-1.0, max_value=1.0, step=0.0000001, format="%.7f"
-        )
-        Roughness = st.number_input(
-            "Roughness", min_value=0.0, max_value=10.0, step=0.1
-        )
-        SAVI = st.number_input(
-            "SAVI", min_value=-1.0, max_value=1.0, step=0.0000001, format="%.7f"
-        )
-
+        NDBI = st.number_input("NDBI", min_value=-1.0, max_value=1.0, step=0.0000001, format="%.7f")
+        NDWI = st.number_input("NDWI", min_value=-1.0, max_value=1.0, step=0.0000001, format="%.7f")
+        Roughness = st.number_input("Roughness", min_value=0.0, max_value=10.0, step=0.1)
+        SAVI = st.number_input("SAVI", min_value=-1.0, max_value=1.0, step=0.0000001, format="%.7f")
+    
     with col3:
-        Slope = st.number_input(
-            "Slope", min_value=0.0, max_value=90.0, step=0.0000001, format="%.7f"
-        )
-        SMI = st.number_input(
-            "SMI", min_value=-1.0, max_value=1.0, step=0.0000001, format="%.7f"
-        )
-        solar_radiation = st.number_input(
-            "Solar Radiation", min_value=0.0, max_value=1000.0, step=1.0
-        )
+        Slope = st.number_input("Slope", min_value=0.0, max_value=90.0, step=0.0000001, format="%.7f")
+        SMI = st.number_input("SMI", min_value=-1.0, max_value=1.0, step=0.0000001, format="%.7f")
+        solar_radiation = st.number_input("Solar Radiation", min_value=0.0, max_value=1000.0, step=1.0)
 
     # Add model selection
     models = [
@@ -173,19 +116,7 @@ def prediction_page():
     model_choice = st.selectbox("Select Model", models)
 
     if st.button("Classify"):
-        input_data = preprocess_inputs(
-            latitude,
-            longitude,
-            landuse,
-            NDVI,
-            NDBI,
-            NDWI,
-            Roughness,
-            SAVI,
-            Slope,
-            SMI,
-            solar_radiation,
-        )
+        input_data = preprocess_inputs(latitude, longitude, landuse, NDVI, NDBI, NDWI, Roughness, SAVI, Slope, SMI, solar_radiation)
         models_dir = Path("models")
         if model_choice == models[0]:
             # Load pre-trained XGBClassifier model
