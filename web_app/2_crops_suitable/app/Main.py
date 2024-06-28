@@ -6,9 +6,10 @@ import plotly.express as px
 
 
 st.title("Crop Selection and Yield Prediction for Urban Farming in Milan")
-st.sidebar.title('Crop and Yield Prediction Dashboard')
-st.sidebar.image("./media/omdena_milan.png", use_column_width='never') 
-st.markdown("""
+st.sidebar.title("Crop and Yield Prediction Dashboard")
+st.sidebar.image("./media/omdena_milan.png", use_column_width="never")
+st.markdown(
+    """
 ## Project Background
 
 
@@ -36,7 +37,8 @@ st.markdown("""
 
 ### Contact Us
 For more information, please reach out to our team at [](mailto:) :email:
-""")
+"""
+)
 
 # df = pd.read_csv('../../../data/2_crops_suitable/processed/preprocessed_700.csv')
 # print ("Dataset Length: ", len(df))
@@ -49,7 +51,8 @@ For more information, please reach out to our team at [](mailto:) :email:
 
 st.image("./media/omdena_logo.jpg", use_column_width=False)
 # Footer
-st.markdown("""
+st.markdown(
+    """
 <style>
 .footer {
     position: fixed;
@@ -64,9 +67,6 @@ st.markdown("""
 <div class="footer">
 <p>Developed with <span style='color:blue;'>❤</span> by <a href="https://www.linkedin.com/company/omdena-milan-chapter/" target="_blank">Omdena-Milan Chapter Team</a> </p>
 </div>
-""", unsafe_allow_html=True)
-
-
-
-
-
+""",
+    unsafe_allow_html=True,
+)
