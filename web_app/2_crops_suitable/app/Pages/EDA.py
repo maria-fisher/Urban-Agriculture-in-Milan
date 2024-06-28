@@ -11,16 +11,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 
-
 def load_data():
-    return pd.read_csv("../../../data/2_crops_suitable/processed/preprocessed_700.csv")
-
+    return pd.read_csv('../../../data/2_crops_suitable/processed/preprocessed_700.csv')
 
 # Define a function to display EDA graphs
 def display_eda(data):
     st.title("Exploratory Data Analysis")
 
-    # Pairplot
+     # Pairplot
     st.subheader("Pairplot")
     pairplot_fig = sns.pairplot(data)
     st.pyplot(pairplot_fig)
@@ -28,7 +26,7 @@ def display_eda(data):
     # Correlation Heatmap
     st.subheader("Correlation Heatmap")
     plt.figure(figsize=(10, 4))
-    heatmap_fig = sns.heatmap(data.corr(), annot=True, cmap="coolwarm")
+    heatmap_fig = sns.heatmap(data.corr(), annot=True, cmap='coolwarm')
     st.pyplot(heatmap_fig.figure)
 
     # Histogram
@@ -62,7 +60,6 @@ def display_eda(data):
     line_y_column = st.selectbox("Select y column for line plot", data.columns)
     line_fig = px.line(data, x=line_x_column, y=line_y_column)
     st.plotly_chart(line_fig)
-
 
 # Load data
 data = load_data()
