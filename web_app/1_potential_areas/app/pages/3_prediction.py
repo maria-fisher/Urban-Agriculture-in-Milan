@@ -23,6 +23,26 @@ def preprocess_inputs(longitude, latitude, landuse, NDVI, NDBI, NDWI, Roughness,
 
     return df
 
+def display_classification_result(prediction, prediction_proba):
+    """Function to display the classification result and probabilities."""
+    st.subheader("Classification Result")
+    if prediction[0] == 1:
+        st.success("The area is suitable for urban farming!")
+        st.subheader("Prediction Probability")
+        st.write(f"Probability of being suitable: {prediction_proba[0][1]:.2f}")
+    else:
+        st.error("The area is not suitable for urban farming.")
+        st.subheader("Prediction Probability")
+        st.write(f"Probability of being not suitable: {prediction_proba[0][0]:.2f}")
+
+def display_clustering_result(cluster):
+    """Function to display the clustering result."""
+    st.subheader("Clustering Result")
+    if cluster[0] == 1:
+        st.write("The area is suitable for urban farming!")
+    else:
+        st.error("The area is not suitable for urban farming.")
+
 # Function for Model/Prediction Page
 def prediction_page():
     col1, col2, col3, col4 = st.columns([1,1,3,1], gap='medium')
@@ -85,16 +105,7 @@ def prediction_page():
                 model = pickle.load(file)
             prediction = model.predict(input_data)
             prediction_proba = model.predict_proba(input_data)
-
-            st.subheader("Classification Result")
-            if prediction[0] == 1:
-                st.success("The area is suitable for urban farming!")
-                st.subheader("Prediction Probability")
-                st.write(f"Probability of being suitable: {prediction_proba[0][1]:.2f}")
-            else:
-                st.error("The area is not suitable for urban farming.")
-                st.subheader("Prediction Probability")
-                st.write(f"Probability of being not suitable: {prediction_proba[0][0]:.2f}")
+            display_classification_result(prediction, prediction_proba)
 
         elif model_choice == models[1]:
             # Load K-means model
@@ -102,11 +113,7 @@ def prediction_page():
                 model = pickle.load(file)
 
             cluster = model.predict(input_data)
-            st.subheader("Clustering Result")
-            if cluster[0] == 1:
-                st.write(f"The area is suitable for urban farming!")
-            else:
-                st.error("The area is not suitable for urban farming.")
+            display_clustering_result(cluster)
 
 
 if __name__ == "__main__":
