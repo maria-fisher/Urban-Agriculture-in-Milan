@@ -1,0 +1,11 @@
+S. no.,Name,Min_Temperature,Max_Temperature,Min_Rainfall,Max_Rainfall,Min_pH,Max_pH,Category_pH,Soil_Type,Fertility,Min_Light_Hours,Max_Light_Hours,Photoperiod,Min_Light_Intensity,Max_Light_Intensity,Min_Rh,Max_Rh,N-P-K Ratio,Min_Nitrogen,Max_Nitrogen,Min_Phosphorus,Max_Phosphorus,Min_Potassium,Max_Potassium,Season,Min_Yield,Max_Yield
+1,Tomatoes,20,27,400,600,5.5,6.8,low_acidic,Sandy Loam,High,6,8,Short Day Period,300,800,50,60,10:10:10,120,160,140,180,260,360,"Spring, Summer, Fall",58.3479,65.1067
+2,Eggplants,22,27,1200,1600,5.5,6.8,low_acidic,Sandy Loam,High,8,10,Short Day Period,300,800,50,60,05:10:10,140,150,150,160,210,240,"Spring, Summer, Fall",31.204,32.0389
+3,Asparagus,15,30,800,1200,6,6.7,low_acidic,Sandy Loam,High,8,10,Short Day Period,300,500,40,60,10:10:10,140,180,60,120,160,200,Spring,6.1369,7.1429
+4,Chilli Peppers,17,30,600,1250,5.5,6.8,low_acidic,Loamy,moderate,6,12,Short Day Period,300,800,65,85,10:10:10,300,400,140,150,460,580,"Spring, Summer, Fall",24.284,25.2378
+5,Cabbage,15,24,500,1000,6,7.5,"low_acidic, neutral",Loamy,High,6,8,Short Day Period,200,600,60,90,10:10:10,120,160,50,100,180,200,"Spring, Summer, Fall",18.4252,19.5824
+6,Cucumbers,18,32,1000,1200,6,7.5,"low_acidic, neutral",Sandy loam,High,8,10,Short Day Period,300,800,60,80,10:10:10,47,50,13,40,65,80,"Spring, Summer",26.6453,31.3184
+7,Potatoes,15,25,500,800,5,6.2,low_acidic,Loamy,moderate,6,8,Short Day Period,300,500,60,80,10:10:10,150,250,60,110,135,250,Fall,28.1628,30.2988
+8,Cauliflowers,10,25,600,1100,6,7,"low_acidic, neutral",Loamy,High,6,8,Short Day Period,200,600,50,60,10:10:10,120,160,50,100,180,200,"Winter, Fall",23.2106,23.9016
+9,Broccoli,18,21,600,1100,6,7,"low_acidic, neutral",Loamy,High,6,8,Short Day Period,200,600,50,60,10:10:10,80,120,80,120,140,180,"Spring, Summer, Fall, Winter",23.2106,23.9016
+10,Green Peas,10,24,800,1200,5.5,7,"low_acidic, neutral",Sandy,moderate,6,8,Short Day Period,200,400,60,70,05:10:10,126,166,34,54,105,145,"Spring, Fall      ",4.5636,5.5443

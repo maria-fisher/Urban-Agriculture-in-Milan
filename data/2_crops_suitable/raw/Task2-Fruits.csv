@@ -1,0 +1,16 @@
+S. no.,Name,Min_Temperature,Max_Temperature,Min_Rainfall,Max_Rainfall,Category_pH,Min_pH,Max_pH,Soil_Type,Fertility,Min_Light_Hours,Max_Light_Hours,Photoperiod,Min_Light_Intensity,Max_Light_Intensity,Min_Rh,Max_Rh,N-P-K Ratio,Min_Nitrogen,Max_Nitrogen,Min_Phosphorus,Max_Phosphorus,Min_Potassium,Max_Potassium,Season,Min_Yield,Max_Yield
+1,Apple,14,27,700,2500,"low_acidic, neutral",6,7,Sandy Loam,High,12,14,"Short Day Period, Day Neutral",600,1000,90,95,10-10-2010,75,100,30,50,150,200,"Fall,Spring",10,15
+2,Orange,20,30,1200,2000,low_acidic,5,6,Loamy,Moderate,12,14,"Short Day Period, Day Neutral",500,700,85,90,10-10-2010,120,200,50,70,140,280,"Winter,Spring,Fall",15,20
+3,Pomegranate,23,32,900,1200,"low_acidic, neutral, low_alkaline",6.5,7.5,Loamy,High,12,14,"Short Day Period, Day Neutral",600,800,90,95,05-10-2005,150,160,60,77,205,230,Fall,1,3
+4,Peach,20,33,900,1100,low_acidic,5.5,6.3,Loamy,High,12,14,"Short Day Period, Day Neutral",200,300,90,95,10-10-2010,150,200,22,44,200,250,Summer,6,10
+5,Blueberry,18,30,900,1100,acidic,4,5,Loamy,Moderate,12,14,"Short Day Period, Day Neutral",400,700,90,95,10-10-2010,40,60,20,30,90,110,Summer,3,6
+6,Strawberry,11,24,600,900,low_acidic,6,6.8,Loamy,Moderate,12,14,"Short Day Period, Day Neutral",400,600,90,95,10-10-2010,150,200,110,130,230,250,"Spring,Summer",18,22
+7,Figs,16,26,700,1500,"low_acidic, neutral",6,7,Loamy,Moderate,12,14,"Short Day Period, Day Neutral",80,160,85,90,20-10-2020,290,310,110,130,110,130,Summer,3,7
+8,Cherries,21,32,1200,2500,low_acidic,5.5,6.5,Loamy,High,12,14,"Short Day Period, Day Neutral",200,300,90,95,05-10-2010,90,110,50,60,120,140,"Spring,Summer",2,6
+9,Lemon,15,28,1000,2300,"low_acidic, neutral",6.5,7,Sandy Loam,High,12,14,"Short Day Period, Day Neutral",300,600,85,90,06-06-2006,120,200,50,70,140,280,"Winter,Spring,Fall",16,20
+10,Kiwi,21,30,900,1300,"low_acidic, neutral",6,7,"Loam, Sandy Loam",High,12,14,"Short Day Period, Day Neutral",600,900,90,95,10-10-2010,190,210,140,160,45,65,"Winter,Spring,Fall",4,8
+11,Watermelon,30,40,500,800,"low_acidic, neutral",6,7,Sandy loam,High,6,8,Short Day Period,250,350,89,91,10-10-2010,80,100,25,60,35,80,"Spring,Summer",44,53
+12,Grapes,15,30,700,850,"low_acidic, neutral",5.5,7.5,Loamy,Moderate,12,14,"Short Day Period, Day Neutral",500,700,90,95,10-10-2010,120,160,50,70,120,160,"Summer,Fall",10,14
+13,apricot,14,35,900,1300,"low_acidic, neutral, low_alkaline",6,8,Loamy,Moderate,10,16,"Short Day Period, Day Neutral, Long Day Period",200,300,90,95,05-10-2005,115,145,55,75,220,260,Summer,7,11
+14,pear,20,35,600,900,acidic,3.5,4.6,Loamy,moderate,10,16,"Short Day Period, Day Neutral, Long Day Period",500,1000,90,95,10-10-2010,75,100,30,50,150,200,"Spring, Fall",10,14
+15,plum,15,25,900,1100,acidic,3,4,Loamy,moderate,10,16,"Short Day Period, Day Neutral, Long Day Period",250,400,90,95,10-10-2010,100,135,200,275,200,275,Summer,4,8
