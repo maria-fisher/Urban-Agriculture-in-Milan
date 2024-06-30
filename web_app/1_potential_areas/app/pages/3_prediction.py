@@ -51,7 +51,7 @@ def prediction_page():
                     'commercial', 'village_green', 'railway', 'retail',
                     'plant_nursery', 'brownfield', 'recreation_ground', 'religious']
     landuse_catgories = [str.capitalize(landuse_catgory) for landuse_catgory in landuse_catgories]
-
+    
     # Take inputs from user
     col1, col2, col3 = st.columns(3)
 
@@ -80,7 +80,7 @@ def prediction_page():
 
         if model_choice == "Supervised Model: XGBClassifier":
             # Load pre-trained XGBClassifier model
-            with open(r'models\urban_farming_supervised_model.pkl', 'rb') as file:
+            with open(r'E:\DS\Projects\Omdena_Milano\Urban-Agriculture-in-Milan\modelling\1_potential_areas\development\Nitesh\urban_farming_supervised_model.pkl', 'rb') as file:
                 model = pickle.load(file)
             prediction = model.predict(input_data)
             prediction_proba = model.predict_proba(input_data)

@@ -1,5 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
+import pandas as pd
 
 # Function for EDA/Dashboards/Features Used Page
 def eda_page():
@@ -21,8 +22,10 @@ def eda_page():
     st.write("Here are the features used in the model along with their distributions:")
 
     # Data to simulate EDA
+    df = pd.read_csv(r"E:\DS\Projects\Omdena_Milano\Urban-Agriculture-in-Milan\data\1_potential_areas\processed\Nitesh_2014_and_2023\Data_2014\Final_combined_data_Zone4_with_target_v2.csv")
+    st.map(df, latitude='col1', longitude='col2', size='col3', color='col4')
 
-    # Display distributions of each feature
+    # Display plots of each feature
     
     st.write("""
     Data was collected from various sources such as satellite imagery, geographical surveys, and climate databases.
