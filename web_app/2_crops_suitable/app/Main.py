@@ -65,8 +65,3 @@ st.markdown("""
 <p>Developed with <span style='color:blue;'>❤</span> by <a href="https://www.linkedin.com/company/omdena-milan-chapter/" target="_blank">Omdena-Milan Chapter Team</a> </p>
 </div>
 """, unsafe_allow_html=True)
-
-
-
-
-
