@@ -1,4 +1,5 @@
 import streamlit as st
+import streamlit.components.v1 as components
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -9,6 +10,7 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from pathlib import Path
 
+st.set_page_config(layout="wide")
 
 # Root Path
 root_path = Path(__file__).parent.parent.parent.parent.parent
@@ -45,6 +47,17 @@ def eda_page():
     """)
 
 eda_page()
+
+# Looker Studio report URL
+report_url = "https://lookerstudio.google.com/embed/reporting/eaab71cb-575f-4f7c-b9ac-97942e43d017/page/r2W2D"
+
+# Create the iframe HTML
+iframe_code = f"""
+<iframe width="100%" height="1000" src="{report_url}" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+"""
+
+# Display the iframe using Streamlit's components.html function
+components.html(iframe_code, height=1000)
 
 
 data_dir = root_path.joinpath('data')
