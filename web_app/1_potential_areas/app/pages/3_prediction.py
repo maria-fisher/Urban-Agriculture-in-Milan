@@ -83,7 +83,7 @@ def prediction_page():
                     'commercial', 'village_green', 'railway', 'retail',
                     'plant_nursery', 'brownfield', 'recreation_ground', 'religious']
     landuse_catgories = [str.capitalize(landuse_catgory) for landuse_catgory in landuse_catgories]
-
+    
     # Take inputs from user
     col1, col2, col3 = st.columns(3)
 
