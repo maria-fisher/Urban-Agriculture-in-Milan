@@ -112,9 +112,8 @@ def plot_histogram(data):
 
 # Compute the correlation matrix and plot
 @st.cache_data
-def plot_correlation():
-    cols = ['NDVI', 'NDBI', 'NDWI', 'BU', 'Solar(kWh/m2)', 'Air_temperature', 'precipitation', 'Soil_temperature', 'Soil_moisture']
-    correlation_matrix = vegsun_climatesoil[cols].corr()
+def plot_correlation(df, cols:list[str]):
+    correlation_matrix = df[cols].corr()
 
     # Create a Plotly heatmap
     fig = go.Figure(data=go.Heatmap(
@@ -137,11 +136,16 @@ def plot_correlation():
 
 # Scatter plot of geographical data
 @st.cache_data
-def plot_scatter():
-    fig = px.scatter(vegsun_climatesoil, x='longitude', y='latitude', color='class',
-                    title='Geographical Distribution of Vegetation Classes',
-                    labels={'longitude': 'Longitude', 'latitude': 'Latitude', 'class': 'Vegetation Class'},
-                    color_discrete_map={'Class1': 'blue', 'Class2': 'green', 'Class3': 'red'})
+def plot_scatter(df):
+    x_axis = 'longitude'
+    y_axis = 'latitude'
+    title = 'Geographical Distribution of Vegetation Classes'
+    labels = {'longitude': 'Longitude', 'latitude': 'Latitude', 'class': 'Vegetation Class'}
+    colors = {'Class1': 'blue', 'Class2': 'green', 'Class3': 'red'}
+    fig = px.scatter(df, x=x_axis, y=y_axis, color='class',
+                    title=title,
+                    labels=labels,
+                    color_discrete_map=colors)
 
     # Customize the layout
     fig.update_layout(
@@ -155,10 +159,13 @@ def plot_scatter():
 
 # Bar chart
 @st.cache_data
-def plot_bar():
-    fig = px.bar(vegsun_climatesoil, x='class', 
-                title='Distribution of Vegetation Classes',
-                labels={'class': 'Class', 'count': 'Count'},
+def plot_bar(df):
+    x_axis = 'class'
+    title = 'Distribution of Vegetation Classes'
+    labels = {'class': 'Class', 'count': 'Count'}
+    fig = px.bar(df, x=x_axis, 
+                title=title,
+                labels=labels,
                 color_discrete_sequence=['blue'])
 
     # Customize the layout (optional)
@@ -217,15 +224,16 @@ with st.expander("Histogram"):
 
 # Correlation matrix plot
 with st.expander("Correlation Matrix"):
-    fig = plot_correlation()
+    cols = ['NDVI', 'NDBI', 'NDWI', 'BU', 'Solar(kWh/m2)', 'Air_temperature', 'precipitation', 'Soil_temperature', 'Soil_moisture']
+    fig = plot_correlation(vegsun_climatesoil, cols)
     st.plotly_chart(fig)
 
 # Scatter plot
 with st.expander("Scatter Plot"):
-    scatter_vegetation = plot_scatter()
+    scatter_vegetation = plot_scatter(vegsun_climatesoil)
     st.plotly_chart(scatter_vegetation, theme="streamlit", use_container_width=True)
 
 # Bar chart
 with st.expander("Bar Chart"):
-    bar_plot = plot_bar()
+    bar_plot = plot_bar(vegsun_climatesoil)
     st.plotly_chart(bar_plot)
