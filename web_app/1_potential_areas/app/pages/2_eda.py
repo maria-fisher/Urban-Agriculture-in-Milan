@@ -2,16 +2,13 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
 import json
 import geopandas as gpd
-from shapely.geometry import Point
-import plotly.figure_factory as ff
 import plotly.express as px
-import plotly.subplots as sp
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from pathlib import Path
+
 
 # Root Path
 root_path = Path(__file__).parent.parent.parent.parent.parent
@@ -53,17 +50,17 @@ eda_page()
 data_dir = root_path.joinpath('data')
 data_path = '1_potential_areas/processed/Opeyemi'
 
-
+@st.cache_data
 def read_csv(filename, index_col=None):
-    df = pd.read_csv(data_dir.joinpath(data_path).joinpath(filename),index_col=index_col)
+    df = pd.read_csv(data_dir.joinpath(data_path).joinpath(filename),index_col=index_col, engine='pyarrow', dtype_backend='pyarrow')
     return df
 
 
 # Function to extract coordinates
 def extract_coordinates(point):
-    point_dict = json.loads(point)
-    longitude = point_dict['coordinates'][0]
-    latitude = point_dict['coordinates'][1]
+    point_dict = json.loads(point)['coordinates']
+    longitude = point_dict[0]
+    latitude = point_dict[1]
     return longitude, latitude
 
 # Convert pandas dataframes to geopandas geodataframes and perform a spatial join.
@@ -76,7 +73,8 @@ def convert_and_join(df1, df2, max_distance=0.01):
     merged_gdf = gpd.sjoin_nearest(gdf1, gdf2, how='inner', max_distance=max_distance)
 
     # Drop specific columns and convert back to pandas DataFrame
-    merged_gdf = pd.DataFrame(merged_gdf.drop(columns=['geometry', 'index_right', 'longitude_right', 'latitude_right']))
+    cols_to_drop = ['geometry', 'index_right', 'longitude_right', 'latitude_right']
+    merged_gdf = pd.DataFrame(merged_gdf.drop(columns=cols_to_drop, errors='ignore'))
 
     return merged_gdf
 
@@ -95,6 +93,7 @@ def classify_vegetation(ndvi):
         return 'null'
 
 
+@st.cache_data
 def plot_histogram(data):
     # Creating a subplot figure with Plotly
     fig = make_subplots(rows=3, cols=3, subplot_titles=[title for _, title in data])
@@ -114,8 +113,9 @@ def plot_histogram(data):
 
 
 # Compute the correlation matrix and plot
-def plot_correlation():
-    correlation_matrix = vegsun_climatesoil[['NDVI', 'NDBI', 'NDWI', 'BU', 'Solar(kWh/m2)', 'Air_temperature', 'precipitation', 'Soil_temperature', 'Soil_moisture']].corr()
+@st.cache_data
+def plot_correlation(df, cols:list[str]):
+    correlation_matrix = df[cols].corr()
 
     # Create a Plotly heatmap
     fig = go.Figure(data=go.Heatmap(
@@ -137,11 +137,17 @@ def plot_correlation():
     return fig
 
 # Scatter plot of geographical data
-def plot_scatter():
-    fig = px.scatter(vegsun_climatesoil, x='longitude', y='latitude', color='class',
-                    title='Geographical Distribution of Vegetation Classes',
-                    labels={'longitude': 'Longitude', 'latitude': 'Latitude', 'class': 'Vegetation Class'},
-                    color_discrete_map={'Class1': 'blue', 'Class2': 'green', 'Class3': 'red'})
+@st.cache_data
+def plot_scatter(df):
+    x_axis = 'longitude'
+    y_axis = 'latitude'
+    title = 'Geographical Distribution of Vegetation Classes'
+    labels = {'longitude': 'Longitude', 'latitude': 'Latitude', 'class': 'Vegetation Class'}
+    colors = {'Class1': 'blue', 'Class2': 'green', 'Class3': 'red'}
+    fig = px.scatter(df, x=x_axis, y=y_axis, color='class',
+                    title=title,
+                    labels=labels,
+                    color_discrete_map=colors)
 
     # Customize the layout
     fig.update_layout(
@@ -154,10 +160,14 @@ def plot_scatter():
 
 
 # Bar chart
-def plot_bar():
-    fig = px.bar(vegsun_climatesoil, x='class', 
-                title='Distribution of Vegetation Classes',
-                labels={'class': 'Class', 'count': 'Count'},
+@st.cache_data
+def plot_bar(df):
+    x_axis = 'class'
+    title = 'Distribution of Vegetation Classes'
+    labels = {'class': 'Class', 'count': 'Count'}
+    fig = px.bar(df, x=x_axis, 
+                title=title,
+                labels=labels,
                 color_discrete_sequence=['blue'])
 
     # Customize the layout (optional)
@@ -210,22 +220,22 @@ data = [
 ]
 
 # Histogram
-hist = plot_histogram(data)
-st.title("Interactive Plotly Distribution Plots")
-st.plotly_chart(hist)
+with st.expander("Histogram"):
+    hist = plot_histogram(data)
+    st.plotly_chart(hist)
 
 # Correlation matrix plot
-fig = plot_correlation()
-st.plotly_chart(fig)
+with st.expander("Correlation Matrix"):
+    cols = ['NDVI', 'NDBI', 'NDWI', 'BU', 'Solar(kWh/m2)', 'Air_temperature', 'precipitation', 'Soil_temperature', 'Soil_moisture']
+    fig = plot_correlation(vegsun_climatesoil, cols)
+    st.plotly_chart(fig)
 
 # Scatter plot
-scatter_vegetation = plot_scatter()
-st.plotly_chart(scatter_vegetation)
-
+with st.expander("Scatter Plot"):
+    scatter_vegetation = plot_scatter(vegsun_climatesoil)
+    st.plotly_chart(scatter_vegetation, theme="streamlit", use_container_width=True)
 
 # Bar chart
-bar_plot = plot_bar()
-st.plotly_chart(bar_plot)
-
-# if __name__ == "__main__":
-#     eda_page()
+with st.expander("Bar Chart"):
+    bar_plot = plot_bar(vegsun_climatesoil)
+    st.plotly_chart(bar_plot)
