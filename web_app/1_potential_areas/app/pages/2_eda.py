@@ -83,35 +83,6 @@ def read_csv(filename, index_col=None):
     )
     return df
 
-
-# Function to extract coordinates
-def extract_coordinates(point):
-    point_dict = json.loads(point)["coordinates"]
-    longitude = point_dict[0]
-    latitude = point_dict[1]
-    return longitude, latitude
-
-
-# Convert pandas dataframes to geopandas geodataframes and perform a spatial join.
-def convert_and_join(df1, df2, max_distance=0.01):
-    # Convert pandas dataframes to geopandas geodataframes
-    gdf1 = gpd.GeoDataFrame(
-        df1, geometry=gpd.points_from_xy(df1.longitude, df1.latitude)
-    )
-    gdf2 = gpd.GeoDataFrame(
-        df2, geometry=gpd.points_from_xy(df2.longitude, df2.latitude)
-    )
-
-    # Perform the spatial join
-    merged_gdf = gpd.sjoin_nearest(gdf1, gdf2, how="inner", max_distance=max_distance)
-
-    # Drop specific columns and convert back to pandas DataFrame
-    cols_to_drop = ["geometry", "index_right", "longitude_right", "latitude_right"]
-    merged_gdf = pd.DataFrame(merged_gdf.drop(columns=cols_to_drop, errors="ignore"))
-
-    return merged_gdf
-
-
 # Function to classify vegetation based on NDVI value
 def classify_vegetation(ndvi):
     if ndvi < 0.1:
