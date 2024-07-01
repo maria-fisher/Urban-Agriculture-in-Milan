@@ -1,6 +1,8 @@
 import streamlit as st
 import streamlit.components.v1 as components
 import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
 import json
 import geopandas as gpd
 import plotly.express as px
@@ -37,7 +39,7 @@ def eda_page():
 
     # Data to simulate EDA
 
-    # Display distributions of each feature
+    # Display plots of each feature
     
     st.write("""
     Data was collected from various sources such as satellite imagery, geographical surveys, and climate databases.
