@@ -7,6 +7,7 @@ from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from pathlib import Path
 
+
 # Root Path
 root_path = Path(__file__).parent.parent.parent.parent.parent
 
@@ -49,7 +50,7 @@ data_path = '1_potential_areas/processed/Opeyemi'
 
 @st.cache_data
 def read_csv(filename, index_col=None):
-    df = pd.read_csv(data_dir.joinpath(data_path).joinpath(filename),index_col=index_col, engine='pyarrow')
+    df = pd.read_csv(data_dir.joinpath(data_path).joinpath(filename),index_col=index_col, engine='pyarrow', dtype_backend='pyarrow')
     return df
 
 
