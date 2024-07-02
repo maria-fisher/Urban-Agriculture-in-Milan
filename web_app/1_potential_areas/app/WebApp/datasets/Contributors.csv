@@ -1,0 +1,110 @@
+﻿Name,Position,Phase,Contribution
+Ashwitha Kassetty,Co-lead,Data Collection,Meetings-Deadlines-Reminders-Structure-Planning-Strategy-Timeline
+Hilda Posada,Task Lead,Data Collection,Meetings-Deadlines-Reminders-Structure-Planning-Strategy-Timeline
+Michael Darko Ahwireng,Team Lead,Data Collection,Meetings-Deadlines-Reminders-Structure-Planning-Strategy-Timeline
+Pujan Thapa,Team Lead,Data Collection,Meetings-Deadlines-Reminders-Structure-Planning-Strategy-Timeline
+Madhav Agrawal,"Team Lead, only private channel set up",Data Collection,Meetings-Deadlines-Reminders-Structure-Planning-Strategy-Timeline
+Rajesh KR,"Team Member, Poll edit and central database suggestions",Data Collection,Meetings-Deadlines-Reminders-Structure-Planning-Strategy-Timeline
+Madhav Agrawal,Team Lead,Data Collection,Collection of satellite images
+Michael Darko Ahwireng,Team Lead,Data Collection,Collection of satellite images
+Pujan Thapa,Team Lead,Data Collection,Collection of satellite images
+Denis Mwangii,Team Member,Data Collection,Collection of satellite images
+Venura Pussella,Team Member,Data Collection,Collection of satellite images
+Pratiksha Naik,Team Member,Data Collection,Collection of satellite images
+Birtukan Birawo,Team Member,Data Collection,Collection of satellite images
+Jasmin,Team Member,Data Collection,Collection of satellite images
+Nitesh Kumar Kesharwani,Task Lead,Data Collection,Collection of satellite images
+Nishthaa,Team Member,Data Collection,Collection of satellite images
+Deepa R,Team Member,Data Collection,Collection of satellite images
+Shovan Raj Shrestha,Team Member,Data Collection,Collection of satellite images
+Pujan Thapa,Team Lead,Data Collection,Collection of infrastructure data
+Aditya Trivedi,Team Member,Data Collection,Collection of infrastructure data
+Bipan Neupane,Team Member,Data Collection,Collection of infrastructure data
+Harsh Khurana,Team Member,Data Collection,Collection of infrastructure data
+Yasmine Medjadba,Team Member,Data Collection,Collection of infrastructure data
+Venura Pussella,Team Member,Data Collection,Collection of infrastructure data
+Jasmin,Team Member,Data Collection,Collection of infrastructure data
+Kamia Salango,Team Member,Data Collection,Collection of infrastructure data
+Jesi Martin Maglana,Team Member,Data Collection,Collection of infrastructure data
+Nhat Minh Nguyen,Team Member,Data Collection,Collection of climate data
+Havish B,Team Member,Data Collection,Collection of climate data
+Opeyemi Ebunoluwa Abodunrin,Team Member,Data Collection,Collection of climate data
+Saisree Gownipalli Ramanaiah,Team Member,Data Collection,Collection of climate data
+Nitesh Kesharwani,Task Lead,Data Collection,Collection of climate data
+Venura Pussella,Team Member,Data Collection,Collection of climate data
+Leila Javanmardi,Team Member,Data Collection,Collection of social data
+Rupak R,Team Member,Data Collection,Collection of social data
+Michael Darko Ahwireng,Team Member,Data Collection,Collection of social data
+Hilda Posada,Task Lead,Data Collection,Report
+Pujan Thapa,Team Lead,Data Collection,Report
+Michael Darko Ahwireng,Team Lead,Data Collection,Report
+Madhav Agrawal,Team Lead,Data Collection,Report
+Ashwitha Kassetty,Team Member,Data Collection,Report
+Saisree Gownipalli Ramanaiah,Team Member,Data Collection,Report
+Maz,Team Member,Data Cleaning & EDA,Additional Data collection
+Vidhi Gupta,Team Member,Data Cleaning & EDA,Additional Data collection
+Birtukan Birawo,Team Member,Data Cleaning & EDA,Additional Data collection
+Pratiksha Naik,Team Member,Data Cleaning & EDA,Additional Data collection
+Opeyemi Ebunoluwa Abodunrin,Team Member,Data Cleaning & EDA,Additional Data collection
+Harsh Khurana,Team Member,Data Cleaning & EDA,Additional Data collection
+Nitesh Kumar Kesharwani,Task Lead,Data Cleaning & EDA,Additional Data collection
+Vidhi Gupta,Team Lead,Data Cleaning & EDA,Data cleaning and EDA
+Harsh Khurana,Team Lead,Data Cleaning & EDA,Data cleaning and EDA
+Pujan Thapa,Team Lead,Data Cleaning & EDA,Data cleaning and EDA
+Opeyemi Ebunoluwa Abodunrin,Team Lead,Data Cleaning & EDA,Data cleaning and EDA
+Varun Garg,Team Member,Data Cleaning & EDA,Data cleaning and EDA
+Birtukan Birawo,Team Member,Data Cleaning & EDA,Data cleaning and EDA
+Deepa Ravindran,Team Member,Data Cleaning & EDA,Data cleaning and EDA
+Soham Das,Team Member,Data Cleaning & EDA,Data cleaning and EDA
+Maz,Team Member,Data Cleaning & EDA,Data cleaning and EDA
+Bipan Neupane,Team Member,Data Cleaning & EDA,Data cleaning and EDA
+Pratiksha Naik,Team Member,Data Cleaning & EDA,Data cleaning and EDA
+Christine Elizabeth Escano,Team Member,Data Cleaning & EDA,Data cleaning and EDA
+Jumacaq,Team Member,Data Cleaning & EDA,Data cleaning and EDA
+Yasmine Medjabda,Team Member,Data Cleaning & EDA,Data cleaning and EDA
+Harsh Khurana,Co-lead,Modelling,Supervised
+Vidhi Gupta,Team Lead,Modelling,Supervised
+Soham Das,Team Lead,Modelling,Supervised
+Michael Darko Ahwireng,Team Lead,Modelling,Supervised
+Deepa Ravindran,Team Member,Modelling,Supervised
+Jidhnyasa Mahajan,Team Member,Modelling,Supervised
+Sania,Team Member,Modelling,Supervised
+Tibarek Mesfin,Team Member,Modelling,Supervised
+Christine Elizabeth Sebastian Escano,Team Member,Modelling,Supervised
+Amandeep Singh,Team Member,Modelling,Supervised
+Aung Khant Phyo,Team Member,Modelling,Supervised
+Opeyemi Ebunoluwa Abodunrin,Co-lead,Modelling,Unsupervised
+Sneha Mahata,Team Lead,Modelling,Unsupervised
+Birtukan Birawo,Team Lead,Modelling,Unsupervised
+Varun Garg,Team Lead,Modelling,Unsupervised
+Pujan Thapa,Team Member,Modelling,Unsupervised
+Jyoti Nigam,Team Member,Modelling,Unsupervised
+Kartik Gehlot,Team Member,Modelling,Unsupervised
+Kamia Salango,Team Member,Modelling,Unsupervised
+Bipan Neupane,Team Member,Modelling,Unsupervised
+Ashwitha Kassetty,Team Member,Modelling,Unsupervised
+Aditya Trivedi,Team Member,Modelling,Unsupervised
+Pratiksha Naik,Team Member,Modelling,Unsupervised
+Nhat Minh Nguy,Team Member,Modelling,Unsupervised
+Harsh Khurana,Co-lead,Web Application Development,Frontend
+Sneha Mahata,Team Lead,Web Application Development,Frontend
+Amritangshu Daskar,Team Member,Web Application Development,Frontend
+Ashwitha Kassetty,Team Member,Web Application Development,Frontend
+Rupak R,Team Member,Web Application Development,Frontend
+Yasmine Medjadba (jasmin),Team Member,Web Application Development,Frontend
+Arpit Sengar,Team Member,Web Application Development,Frontend
+Shivang Singh,Co-lead,Web Application Development,Backend
+Vidhi Gupta,Team Lead,Web Application Development,Backend
+Varun Garg,Team Lead,Web Application Development,Backend
+Pujan Thapa,Team Member,Web Application Development,Backend
+Sulagna Parida,Team Member,Web Application Development,Backend
+Deepa Ravindran,Team Member,Web Application Development,Backend
+Birtukan Birawo,Team Member,Web Application Development,Backend
+Nitesh Kesharwani,Task Lead,Web Application Development,Testing/Improvements
+Aryak Dixit,Co-lead,Web Application Development,Testing/Improvements
+Arpit Sengar,Team Lead,Web Application Development,Testing/Improvements
+Soham Das,Team Lead,Web Application Development,Testing/Improvements
+Opeyemi Ebunoluwa Abodunrin,Team Member,Web Application Development,Testing/Improvements
+Ankitha Beeram,Team Member,Web Application Development,Testing/Improvements
+Bipan Neupane,Team Member,Web Application Development,Testing/Improvements
+Sai Deepak,Team Member,Web Application Development,Testing/Improvements
