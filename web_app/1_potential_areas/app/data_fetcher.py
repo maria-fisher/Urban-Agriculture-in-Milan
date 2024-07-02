@@ -2,8 +2,8 @@ import pandas as pd
 import numpy as np
 
 class DataFetcher:
-    def __init__(self, csv_path):
-        self.data = pd.read_csv(csv_path)
+    def __init__(self, parquet_path):
+        self.data = pd.read_parquet(parquet_path)
 
     def fetch_data(self, latitude, longitude):
         # Calculate the distance between the given lat/lon and the dataset lat/lon

@@ -9,7 +9,7 @@ with open('models/XGBClassifier_Pipeline_Optuna_Vidhi.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Initialize DataFetcher
-data_fetcher = DataFetcher('dataset/Merged_2023.csv')
+data_fetcher = DataFetcher('dataset/MergedData_2023.parquet')
 
 def predict(latitude, longitude):
     # Fetch additional data based on latitude and longitude
