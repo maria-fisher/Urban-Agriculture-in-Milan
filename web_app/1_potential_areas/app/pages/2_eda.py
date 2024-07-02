@@ -83,6 +83,7 @@ def read_csv(filename, index_col=None):
     )
     return df
 
+
 # Function to classify vegetation based on NDVI value
 def classify_vegetation(ndvi):
     if ndvi < 0.1:
@@ -113,9 +114,7 @@ def plot_histogram(data):
         )
 
     # Update layout
-    fig.update_layout(
-        height=800, width=1000, title_text="Distribution Plots", showlegend=False
-    )
+    fig.update_layout(height=800, width=1000, showlegend=False)
     return fig
 
 
@@ -138,18 +137,18 @@ def plot_correlation(df, cols: list[str]):
     )
 
     # Update layout
-    fig.update_layout(
-        title="Correlation Matrix of Vegetation Indices", width=800, height=700
-    )
+    fig.update_layout(width=800, height=700)
     return fig
 
 
 # Scatter plot of geographical data
-@st.cache_data
 def plot_scatter(df):
+    selected_zones = st.multiselect(
+        "Select Zone(s)", options=["zone4", "zone9"], default=["zone4", "zone9"]
+    )
+    filtered_df = df[df["Zone"].isin(selected_zones)]
     x_axis = "Longitude"
     y_axis = "Latitude"
-    title = "Geographical Distribution of Vegetation Classes"
     labels = {
         "longitude": "Longitude",
         "latitude": "Latitude",
@@ -157,11 +156,10 @@ def plot_scatter(df):
     }
     colors = {"Class1": "blue", "Class2": "green", "Class3": "red"}
     fig = px.scatter(
-        df,
+        filtered_df,
         x=x_axis,
         y=y_axis,
         color="class",
-        title=title,
         labels=labels,
         color_discrete_map=colors,
     )
@@ -179,14 +177,19 @@ def plot_scatter(df):
 # Bar chart
 @st.cache_data
 def plot_bar(df):
+    class_counts = df["class"].value_counts().reset_index()
+    class_counts.columns = ["class", "count"]
     x_axis = "class"
-    title = "Distribution of Vegetation Classes"
     labels = {"class": "Class", "count": "Count"}
     fig = px.bar(
-        df, x=x_axis, title=title, labels=labels, color_discrete_sequence=["blue"]
+        class_counts,
+        x=x_axis,
+        y="count",  # Specify the y-axis as the count of each class
+        labels=labels,
+        color="class",  # Color bars by class
+        color_discrete_sequence=["#00b6cb"],
     )
-
-    # Customize the layout (optional)
+    # Customize the layout
     fig.update_layout(
         xaxis=dict(title="Class"), yaxis=dict(title="Count"), showlegend=False
     )
@@ -210,22 +213,22 @@ hist_data = [
 ]
 
 # Histogram
-with st.expander("Histogram"):
+with st.expander("Distribution Plots (Histogram)"):
     hist = plot_histogram(hist_data)
     st.plotly_chart(hist)
 
 # Correlation matrix plot
-with st.expander("Correlation Matrix"):
+with st.expander("Correlation Matrix of Vegetation Indices"):
     cols = ["NDVI", "NDBI", "NDWI", "solar_radiation", "SMI", "LST"]
     fig = plot_correlation(data, cols)
     st.plotly_chart(fig)
 
 # Scatter plot
-with st.expander("Scatter Plot"):
+with st.expander("Scatter Plot of Geographical Distribution of Vegetation Classes"):
     scatter_vegetation = plot_scatter(data)
     st.plotly_chart(scatter_vegetation, theme="streamlit", use_container_width=True)
 
 # Bar chart
-with st.expander("Bar Chart"):
+with st.expander("Bar Chart of Distribution of Vegetation Classes"):
     bar_plot = plot_bar(data)
     st.plotly_chart(bar_plot)
