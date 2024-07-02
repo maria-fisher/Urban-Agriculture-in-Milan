@@ -1,8 +1,6 @@
 import streamlit as st
 import streamlit.components.v1 as components
 import pandas as pd
-import json
-import geopandas as gpd
 import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
@@ -56,10 +54,9 @@ data_path = "1_potential_areas/processed/"
 
 
 @st.cache_data
-def read_csv(filename, index_col=None):
-    df = pd.read_csv(
+def read_parquet(filename):
+    df = pd.read_parquet(
         data_dir.joinpath(data_path).joinpath(filename),
-        index_col=index_col,
         engine="pyarrow",
         dtype_backend="pyarrow",
     )
@@ -157,9 +154,15 @@ def plot_scatter(df):
 
 
 # Bar chart
-@st.cache_data
 def plot_bar(df):
-    class_counts = df["class"].value_counts().reset_index()
+    chosen_zones = st.multiselect(
+        "Select Zone(s)",
+        options=["zone4", "zone9"],
+        default=["zone4", "zone9"],
+        key="zone_select",
+    )
+    filtered_df = df[df["Zone"].isin(chosen_zones)]
+    class_counts = filtered_df["class"].value_counts().reset_index()
     class_counts.columns = ["class", "count"]
     x_axis = "class"
     labels = {"class": "Class", "count": "Count"}
@@ -180,7 +183,7 @@ def plot_bar(df):
 
 # Read CSVs
 # loading ndvi, ndbi and bu(built-up)
-data = read_csv("Merged_2014.csv")
+data = read_parquet("merged_2023.parquet")
 
 # Apply the classification function to the NDVI column and create a class column
 data["class"] = data["NDVI"].apply(classify_vegetation)
