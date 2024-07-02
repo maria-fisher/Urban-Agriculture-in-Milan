@@ -17,20 +17,3 @@ after this you will have all these files in your local system
 streamlit run main.py
 ```
 
-- To view the dashboard (in-built) for Zone 4
-
-```
-streamlit run dashboard_zone4.py
-```
-
-- To view the dashboard for Zone 9
-
-```
-streamlit run dasboard_zone9.py
-```
-
-- To just test the prediction made by Supervised Model
-
-```
-streamlit run latlong.py
-``` 
