@@ -16,24 +16,6 @@ root_path = Path(__file__).parent.parent.parent.parent.parent
 
 # Function for EDA/Dashboards/Features Used Page
 def eda_page():
-    app_path = "web_app/1_potential_areas/app"
-    pages_path = root_path.joinpath(app_path).joinpath("pages")
-
-    col1, col2, col3, col4 = st.columns([1, 1, 3, 1], gap="medium")
-    with col1:
-        st.page_link(str(pages_path.joinpath("1_home.py")), label="Home", icon="🏠")
-    with col2:
-        st.page_link(str(pages_path.joinpath("2_eda.py")), label="EDA", icon="📶")
-    with col3:
-        st.page_link(
-            str(pages_path.joinpath("3_prediction.py")),
-            label="Find Suitable Area for Uraban Farming",
-            icon="🤖",
-        )
-    with col4:
-        st.page_link(
-            str(pages_path.joinpath("4_contact.py")), label="Contact Us", icon="📧"
-        )
 
     # st.set_page_config(page_icon=':bar_chart:')
     st.title("Exploratory Data Analysis")
