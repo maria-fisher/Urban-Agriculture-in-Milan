@@ -1,17 +1,21 @@
 import pickle
-
 import folium
-import numpy as np
 import pandas as pd
 import streamlit as st
 from streamlit_folium import folium_static
+from pathlib import Path
+
+root_path = Path(__file__).parent.parent.parent.parent.parent
+models_path = root_path.joinpath("web_app/1_potential_areas/app/models")
 
 # Load the models (adjust paths as necessary)
-with open("./models/XGBClassifier_Pipeline_Optuna_Vidhi.pkl", "rb") as f:
-    supervised_model = pickle.load(f)
+def load_model(model_path):
+    with open(model_path, "rb") as f:
+        model = pickle.load(f)
+    return model
 
-with open("models/kmeans_model_pipeline.pkl", "rb") as f:
-    unsupervised_model = pickle.load(f)
+supervised_model = load_model(models_path.joinpath("XGBClassifier_Pipeline_Optuna_Vidhi.pkl"))
+unsupervised_model = load_model(models_path.joinpath("kmeans_model_pipeline.pkl"))
 
 
 # Function to get prediction
