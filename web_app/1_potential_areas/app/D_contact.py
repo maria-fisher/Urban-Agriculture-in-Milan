@@ -1,5 +1,10 @@
 import streamlit as st
 import pandas as pd
+from pathlib import Path
+
+# Root Path
+root_path = Path(__file__).parent.parent.parent.parent
+data_dir = root_path.joinpath("web_app/1_potential_areas/app/dataset")
 
 # Function to display local chapter leads
 def display_local_chapter_leads():
@@ -12,20 +17,15 @@ def display_local_chapter_leads():
     - **Mulugheta Solomon**
     """)
 
-# Function to load references
-def load_references():
-    return pd.read_csv("dataset/Datasets_references.csv")
+# Function to load csv
+def load_csv(filename):
+    return pd.read_csv(filename)
 
 # Function to display references
 def display_references(df):
     st.subheader("References")
     for _, row in df.iterrows():
         st.write(f"""- [{row['Data source']}]({row['Link']}) - {row['Description']}""")
-
-# Function to load collaborators
-def load_collaborators():
-    df = pd.read_csv("dataset/Contributors.csv")
-    return df
 
 # Function to display collaborators by phase
 def display_collaborators_by_phase(df):
@@ -94,10 +94,10 @@ def contact_page():
 
     display_local_chapter_leads()
 
-    collaborators = load_collaborators()
+    collaborators = load_csv(data_dir.joinpath("Contributors.csv"))
     display_collaborators_by_phase(collaborators)
 
-    references = load_references()
+    references = load_csv(data_dir.joinpath("Datasets_references.csv"))
     display_references(references)
 
     st.subheader("Contact") 

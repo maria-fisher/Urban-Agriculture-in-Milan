@@ -66,20 +66,6 @@ def show_main_page():
         st.session_state.page = "unsupervised"
         st.experimental_rerun()
 
-def app():
-    apply_custom_css()
-    if 'page' not in st.session_state:
-        st.session_state.page = "main"
-
-    if st.session_state.page == "supervised":
-        predict_using_all()
-    elif st.session_state.page == "unsupervised":
-        predict_using_latlong()
-    else:
-        show_main_page()
-
-if __name__ == "__main__":
-    app()
 
 def predict_using_all():
     import  C1_predict as C1_predict

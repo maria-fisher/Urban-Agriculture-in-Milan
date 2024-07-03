@@ -5,7 +5,7 @@ import streamlit as st
 from streamlit_folium import folium_static
 from pathlib import Path
 
-root_path = Path(__file__).parent.parent.parent.parent.parent
+root_path = Path(__file__).parent.parent.parent.parent
 models_path = root_path.joinpath("web_app/1_potential_areas/app/models")
 
 # Load the models (adjust paths as necessary)
