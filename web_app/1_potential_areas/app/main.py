@@ -6,6 +6,7 @@ from B_eda import eda_page as eda
 from C_agricultural_suitability import app as suitability
 from D_contact import contact_page as Contacts
 import warnings
+from pathlib import Path
 
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 
@@ -16,6 +17,12 @@ st.set_page_config(
     layout="centered",
     initial_sidebar_state="expanded"
 )
+
+# PATH
+root_path = Path(__file__).parent.parent.parent.parent
+task_path = root_path.joinpath("web_app/1_potential_areas/app")
+images_path = task_path.joinpath("Images")
+
 
 def get_base64_of_bin_file(bin_file):
     with open(bin_file, 'rb') as f:
@@ -58,10 +65,11 @@ def set_background_and_text_color(png_file):
     st.markdown(page_bg_img, unsafe_allow_html=True)
 
 # Example usage with your background image
-set_background_and_text_color('Images/bg_img1.png')
+set_background_and_text_color(str(images_path.joinpath('bg_img1.png')))
 
 # Load the logo
-st.image('Images/omdenalogo.png', width=130)  # Adjust width as per your logo size
+logo_path = str(images_path.joinpath('omdenalogo.png'))
+st.image(logo_path, width=130)  # Adjust width as per your logo size
 
 # Sidebar navigation
 with st.sidebar:

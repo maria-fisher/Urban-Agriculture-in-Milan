@@ -8,7 +8,7 @@ from pathlib import Path
 
 
 # Root Path
-root_path = Path(__file__).parent.parent.parent.parent.parent
+root_path = Path(__file__).parent.parent.parent.parent
 data_dir = root_path.joinpath("web_app/1_potential_areas/app/dataset")
 data_path = "merged_2023.parquet"
 
