@@ -1,63 +1,25 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Jun 23 22:24:06 2024
-
-@author: rampr
-"""
-
 import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-import plotly.express as px
+import streamlit.components.v1 as components
 
-def load_data():
-    return pd.read_csv('../../../data/2_crops_suitable/processed/preprocessed_700.csv')
+# Set Streamlit page layout
+st.set_page_config(layout="wide")
 
-# Define a function to display EDA graphs
-def display_eda(data):
-    st.title("🔍 Exploratory Data Analysis")
+# Title of the EDA page
+st.title("Exploratory Data Analysis")
 
-    # Correlation Heatmap
-    st.subheader("🔵 Correlation Heatmap")
-    plt.figure(figsize=(10, 4))
-    heatmap_fig = sns.heatmap(data.corr(), annot=True, cmap='coolwarm')
-    st.pyplot(heatmap_fig.figure)
+# Looker Studio report URL
+report_url = "https://lookerstudio.google.com/embed/reporting/308794df-40c2-4857-a909-ab689dbcfb3e/page/p_iluq9g1zhd"
 
-    # Histogram
-    st.subheader("📊 Histogram")
-    column_hist = st.selectbox("Select a column for histogram", data.columns)
-    hist_fig = px.histogram(data, x=column_hist)
-    st.plotly_chart(hist_fig)
+# Create the iframe HTML
+iframe_code = f"""
+<iframe width="100%" height="1000" src="{report_url}" frameborder="0" style="border:0" allowfullscreen></iframe>
+"""
 
-    # Boxplot
-    st.subheader("📦 Boxplot")
-    column_box = st.selectbox("Select a column for boxplot", data.columns, key="boxplot")
-    box_fig = px.box(data, y=column_box)
-    st.plotly_chart(box_fig)
+# Display the iframe using Streamlit's components.html function
+components.html(iframe_code, height=1000)
 
-    # Violin Plot
-    st.subheader("🎻 Violin Plot")
-    column_violin = st.selectbox("Select a column for violin plot", data.columns, key="violin")
-    violin_fig = px.violin(data, y=column_violin)
-    st.plotly_chart(violin_fig)
 
-    # Scatter Plot
-    st.subheader("🔹 Scatter Plot")
-    x_column_scatter = st.selectbox("Select x column for scatter plot", data.columns, key="scatter_x")
-    y_column_scatter = st.selectbox("Select y column for scatter plot", data.columns, key="scatter_y")
-    scatter_fig = px.scatter(data, x=x_column_scatter, y=y_column_scatter)
-    st.plotly_chart(scatter_fig)
 
-    # Line Plot
-    st.subheader("📈 Line Plot")
-    line_x_column = st.selectbox("Select x column for line plot", data.columns, key="line_x")
-    line_y_column = st.selectbox("Select y column for line plot", data.columns, key="line_y")
-    line_fig = px.line(data, x=line_x_column, y=line_y_column)
-    st.plotly_chart(line_fig)
-
-# Load data
-data = load_data()
-
-# Display EDA graphs
-display_eda(data)
+# Additional EDA content can be added below if needed
+st.header("Additional EDA Content")
+st.write("You can add more EDA content here.")
