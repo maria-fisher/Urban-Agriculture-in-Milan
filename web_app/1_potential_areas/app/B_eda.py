@@ -157,7 +157,7 @@ def eda_page():
 
     # Read CSVs
     # loading ndvi, ndbi and bu(built-up)
-    data = read_parquet(data_path, engine="pyarrow", dtype_backend="pyarrow")
+    data = read_parquet(data_path)
 
     # Apply the classification function to the NDVI column and create a class column
     data["class"] = data["NDVI"].apply(classify_vegetation)
