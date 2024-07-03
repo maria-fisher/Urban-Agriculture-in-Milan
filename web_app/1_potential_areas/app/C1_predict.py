@@ -34,7 +34,17 @@ def run_app():
             font-size: 2em;
             color: #556B2F; /* Olive green color */
             font-weight: bold;
-        }
+            }
+        .big-bold-text {
+                font-size: 1.8em;
+                font-weight: bold;
+                color: #D9534F; /* Bootstrap error color */
+            }
+        .big-bold-success {
+                font-size: 1.8em;
+                font-weight: bold;
+                color: #5CB85C; /* Bootstrap success color */
+            }
         </style>
         """,
         unsafe_allow_html=True,
@@ -179,7 +189,10 @@ def run_app():
             prediction = model.predict(features)[0]
             suitability = "Not Suitable" if prediction in [0, 2] else "Suitable"
 
-        st.write(f"The land is {suitability} for Urban Farming.")
+        if suitability == "Not Suitable":
+            st.markdown("<p class='big-bold-text'>The area is Not Suitable for Urban Farming</p>", unsafe_allow_html=True)
+        else:
+            st.markdown("<p class='big-bold-success'>The area is Suitable for Urban Farming</p>", unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
