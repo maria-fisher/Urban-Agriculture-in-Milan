@@ -93,7 +93,6 @@ def app():
     
     st.markdown("""
     <div class="custom-text">
-<<<<<<< HEAD
     <h3>Introduction</h3>
         <p>Urban farming plays a crucial role in the fight against climate change by supporting sustainable food production within cities. As urbanization continues to expand, integrating agriculture into urban areas not only strengthens local food security but also reduces transportation emissions and the carbon footprint associated with conventional farming practices.</p>
         <p>Additionally, urban farming contributes to the creation of green spaces, helps mitigate the urban heat island effect, and improves air quality. By connecting communities with locally grown food, it encourages environmental responsibility and raises awareness about the impact of traditional agriculture on climate change. Embracing urban farming is essential for the development of environmentally friendly and resilient cities, while also fostering a sustainable future in the face of global climate challenges.</p>
