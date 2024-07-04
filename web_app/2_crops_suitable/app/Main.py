@@ -3,17 +3,25 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import plotly.express as px
+import base64
+from PIL import Image
+from streamlit_option_menu import option_menu
+from utils import utils
+from st_pages import Page, show_pages, add_page_title
 
 st.set_page_config(
     page_title="Crop Selection and Yield Prediction for Urban Farming in Milan",
-    page_icon="🌿",
+    page_icon="🏚️",
     layout="wide",
-)
+    )
+# Sidebar image
+st.sidebar.image("./media/omdena_logo_navigation.png", use_column_width='always')
+
+utils.set_custom_bg()
+utils.custom_navbar()
 
 # Title and Sidebar
 st.title("🌿 Crop Selection and Yield Prediction for Urban Farming in Milan")
-st.sidebar.title('📊 Crop and Yield Prediction Dashboard')
-st.sidebar.image("./media/omdena_milan.png", use_column_width='always')
 
 # Project Background
 st.markdown("""
@@ -46,22 +54,14 @@ For more information, please reach out to our team at [email@example.com](mailto
 # Display Image
 st.image("./media/omdena_logo.jpg", use_column_width='auto')
 
-# Footer
-st.markdown("""
-<style>
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-    color: black;
-    text-align: center;
-    padding: 10px 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
-</style>
-<div class="footer">
-    <p>Developed with <span style='color:red;'>❤</span> by <a href="https://www.linkedin.com/company/omdena-milan-chapter/" target="_blank">Omdena-Milan Chapter Team</a></p>
-</div>
-""", unsafe_allow_html=True)
+
+show_pages(
+    [
+        Page("main.py", "Home", "🏠"),
+        Page("pages/EDA.py", "EDA", ":books:"),
+        Page("pages/Crop_Selections.py", "Crop Selection", "🌿"),
+        Page("Pages/Yield_Prediction.py", "Yield Prediction", "🌾")
+    ]
+)
+
+add_page_title(layout="wide")

@@ -1,0 +1,12 @@
+[theme]
+primaryColor = "#4CAF50"
+backgroundColor = "#f0f0f0"
+secondaryBackgroundColor = "#e0e0e0"
+textColor = "#000000"
+
+[server]
+headless = true
+
+[global]
+# Hide the Streamlit hamburger menu and watermark
+showWarningOnDirectExecution = false
