@@ -1,4 +1,3 @@
-import os
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -25,20 +24,35 @@ st.title("🌿 Crop Selection and Yield Prediction for Urban Farming in Milan")
 
 # Project Background
 st.markdown("""
-## Project Background
+This application is designed to help urban farmers in Milan identify the best crops to grow and predict their potential yields based on local environmental conditions.
+""")
 
-### Challenge Background
+# Overview
+st.header("📋 Overview")
+st.markdown("""
+With this app, you can:
+- 🌿 Input various environmental factors specific to your urban farming site.
+- 🌾 Get predictions for the most suitable crops to grow.
+- 📈 Estimate the potential yield for each crop.
+- 📊 Visualize data and insights through interactive charts and reports.
+""")
 
-### Project Goals
-- 🎯 **Develop an algorithm** that takes into account the environmental conditions, location, and available infrastructure to predict the potential growth of crops in urban areas.
-- 📊 **Analyze factors** such as sunlight exposure, soil quality, water availability, and temperature to determine the most suitable crops for a specific urban farming site.
-- 📋 **Address the risks** associated with urban farming to ensure a successful and sustainable operation. Minimize potential risks related to urban agriculture, including health risks from wastewater irrigation, trace metal, zoonotic risks, and other health risks.
-- 📣 **Suggest solutions** to potential urban farmers to create a safe and productive environment for growing crops in urban settings.
+# Key Features
+st.header("🔑 Key Features")
+st.markdown("""
+- **🌱 Crop Suitability Prediction**: Discover which crops are best suited for your urban farming site.
+- **🌽 Yield Prediction**: Estimate the potential yield based on environmental conditions.
+- **📊 Data Visualization**: Explore interactive charts and graphs to better understand the data.
+- **🔬 Comprehensive Analysis**: Take into account various factors like soil quality, light intensity, and more.
+""")
 
-### How to Use This App
-1. 👉 Navigate to the [**Model**](#model) page.
-2. ✍️ Enter the required input features.
-3. 📈 Get predictions for crop and yield for the input features.
+# How to Use the App
+st.header("📖 How to Use the App")
+st.markdown("""
+1. **✍️ Enter Environmental Data**: Fill in the required fields with information about your farming site.
+2. **🔍 Get Predictions**: Click the 'Predict' button to see the best crops to grow and their expected yields.
+3. **📊 Explore Data**: Use the interactive charts and reports to gain deeper insights into the data.
+4. **💾 Download Results**: Export your predictions and data visualizations for further analysis.
 
 **Note:** Ensure that all input fields are filled in accurately for the best prediction results.
 
