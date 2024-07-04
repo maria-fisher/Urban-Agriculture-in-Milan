@@ -1,67 +1,75 @@
-import os
 import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import plotly.express as px
+from PIL import Image
+import base64
 
-st.set_page_config(
-    page_title="Crop Selection and Yield Prediction for Urban Farming in Milan",
-    page_icon="🌿",
-    layout="wide",
-)
+# Set the page layout
+st.set_page_config(layout="wide")
 
-# Title and Sidebar
-st.title("🌿 Crop Selection and Yield Prediction for Urban Farming in Milan")
-st.sidebar.title('📊 Crop and Yield Prediction Dashboard')
-st.sidebar.image("./media/omdena_milan.png", use_column_width='always')
 
-# Project Background
+# Set background image
+#set_background(r'C:\Users\rampr\Documents\Urban-Agriculture-in-Milan\web_app\2_crops_suitable\app\media\crop.png')  # Replace 'background.png' with the path to your background image
+
+# Title and introduction
+st.title("🌱 Welcome to the Urban Farming Prediction App")
 st.markdown("""
-## Project Background
-
-### Challenge Background
-
-### Project Goals
-- 🎯 **Develop an algorithm** that takes into account the environmental conditions, location, and available infrastructure to predict the potential growth of crops in urban areas.
-- 📊 **Analyze factors** such as sunlight exposure, soil quality, water availability, and temperature to determine the most suitable crops for a specific urban farming site.
-- 📋 **Address the risks** associated with urban farming to ensure a successful and sustainable operation. Minimize potential risks related to urban agriculture, including health risks from wastewater irrigation, trace metal, zoonotic risks, and other health risks.
-- 📣 **Suggest solutions** to potential urban farmers to create a safe and productive environment for growing crops in urban settings.
-
-### How to Use This App
-1. 👉 Navigate to the [**Model**](#model) page.
-2. ✍️ Enter the required input features.
-3. 📈 Get predictions for crop and yield for the input features.
-
-**Note:** Ensure that all input fields are filled in accurately for the best prediction results.
-
-### Useful Links
-- [Omdena](https://omdena.com/)
-- [Project GitHub Repository](https://github.com/omdena/milan-urban-farming)
-- [Omdena Milan LinkedIn](https://www.linkedin.com/company/omdena-milan-chapter/)
-
-### Contact Us
-For more information, please reach out to our team at [email@example.com](mailto:email@example.com) 📧
+This application is designed to help urban farmers in Milan identify the best crops to grow and predict their potential yields based on local environmental conditions.
 """)
 
-# Display Image
-st.image("./media/omdena_logo.jpg", use_column_width='auto')
+# Overview
+st.header("📋 Overview")
+st.markdown("""
+With this app, you can:
+- 🌿 Input various environmental factors specific to your urban farming site.
+- 🌾 Get predictions for the most suitable crops to grow.
+- 📈 Estimate the potential yield for each crop.
+- 📊 Visualize data and insights through interactive charts and reports.
+""")
+
+# Key Features
+st.header("🔑 Key Features")
+st.markdown("""
+- **🌱 Crop Suitability Prediction**: Discover which crops are best suited for your urban farming site.
+- **🌽 Yield Prediction**: Estimate the potential yield based on environmental conditions.
+- **📊 Data Visualization**: Explore interactive charts and graphs to better understand the data.
+- **🔬 Comprehensive Analysis**: Take into account various factors like soil quality, light intensity, and more.
+""")
+
+# How to Use the App
+st.header("📖 How to Use the App")
+st.markdown("""
+1. **✍️ Enter Environmental Data**: Fill in the required fields with information about your farming site.
+2. **🔍 Get Predictions**: Click the 'Predict' button to see the best crops to grow and their expected yields.
+3. **📊 Explore Data**: Use the interactive charts and reports to gain deeper insights into the data.
+4. **💾 Download Results**: Export your predictions and data visualizations for further analysis.
+
+**Note**: Ensure all input fields are filled accurately for the best prediction results.
+""")
+
+# Visualization and Reports
+st.header("📊 Data Visualization and Reports")
+st.markdown("""
+We provide comprehensive visualizations to help you make informed decisions. Explore the following:
+- **🔍 Heatmaps**: Understand the correlation between different environmental factors.
+- **📊 Histograms**: Analyze the distribution of various attributes.
+- **📈 Boxplots**: Identify outliers and understand data spread.
+- **📉 Scatter Plots**: Visualize relationships between variables.
+- **📈 Line Plots**: Track changes and trends over time.
+
+### Embedded Looker Studio Report
+Get detailed insights and analytics through our integrated Looker Studio report.
+""")
+
+# Contact and Feedback
+st.header("📧 Contact and Feedback")
+st.markdown("""
+We value your feedback! If you have any questions, suggestions, or encounter any issues, please reach out to us at [contact email].
+
+### Feedback Form
+[Link to a feedback form] to share your thoughts and suggestions.
+""")
 
 # Footer
 st.markdown("""
-<style>
-.footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-color: white;
-    color: black;
-    text-align: center;
-    padding: 10px 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
-</style>
-<div class="footer">
-    <p>Developed with <span style='color:red;'>❤</span> by <a href="https://www.linkedin.com/company/omdena-milan-chapter/" target="_blank">Omdena-Milan Chapter Team</a></p>
-</div>
-""", unsafe_allow_html=True)
+## Developed by the Omdena Milan Chapter Team
+For more information, visit our [LinkedIn page](https://www.linkedin.com/company/omdena-milan-chapter/).
+""")

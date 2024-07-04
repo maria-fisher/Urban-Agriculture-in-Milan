@@ -1,0 +1,12 @@
+body {
+    background-image: url("https://your-image-url.com/image.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.stApp {
+    background: rgba(255, 255, 255, 0.8); /* Adjust the opacity and color as needed */
+    padding: 2rem;
+    border-radius: 10px;
+}

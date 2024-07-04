@@ -13,7 +13,7 @@ st.set_page_config(
 st.title("🌾 Crop Selection and Yield Prediction for Urban Farming in Milan")
 
 # Sidebar image
-st.sidebar.image("./media/omdena_milan.png", use_column_width='always')
+#st.sidebar.image("./media/omdena_milan.png", use_column_width='always')
 
 # Layout columns
 col1, col2 = st.columns(2)
