@@ -72,8 +72,10 @@ st.write("## Input Features")
 features = user_input_features()
 
 if st.button("Predict"):
+
+#if __name__ == '__main__':
+   # st.run()
     prediction = model.predict(features)
     # Display prediction in a beautiful box
     st.subheader('Predicted Crop Yield')
     st.write(f"## 🌾 Predicted Yield: {prediction[0]} tons per hectare")
-
