@@ -1,10 +1,10 @@
 numpy==2.0.0
 pandas==2.2.2
+Pillow==10.1.0
+Pillow==10.4.0
 plotly==5.22.0
+seaborn==0.13.2
+st_pages==0.5.0
 streamlit==1.36.0
-streamlit_folium==0.21.0
 streamlit_option_menu==0.3.13
-scikit-learn==1.5.1
-xgboost==2.0.3
-matplotlib
-git+https://github.com/username/repository_name.git#egg=st_pages
+matplotlib==3.8.2

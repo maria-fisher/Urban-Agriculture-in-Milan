@@ -10,9 +10,12 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
+from st_pages import add_page_title
+from utils import utils
+import numpy as np
 
 def load_data():
-    return pd.read_csv(r'C:\Users\rampr\Documents\Omdena-Urban-Agriculture-in-Milan\data\2_crops_suitable\processed\preprocessed_700.csv')
+    return pd.read_csv(r'.\data\preprocessed_700.csv')
 
 # Define a function to display EDA graphs
 def display_eda(data):
@@ -51,15 +54,13 @@ def display_eda(data):
     scatter_fig = px.scatter(data, x=x_column, y=y_column)
     st.plotly_chart(scatter_fig)
 
-    # Line Plot
-    st.subheader("Line Plot")
-    line_x_column = st.selectbox("Select x column for line plot", data.columns)
-    line_y_column = st.selectbox("Select y column for line plot", data.columns)
-    line_fig = px.line(data, x=line_x_column, y=line_y_column)
-    st.plotly_chart(line_fig)
-
 # Load data
 data = load_data()
 
+utils.set_custom_bg()
+utils.custom_navbar()
+# Sidebar image
+st.sidebar.image("./media/omdena_logo_navigation.png", use_column_width='always')
 # Display EDA graphs
-display_eda(data)
+display_eda(data.select_dtypes(include=np.number))
+add_page_title(layout="wide")
