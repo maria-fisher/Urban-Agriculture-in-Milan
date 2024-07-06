@@ -76,7 +76,7 @@ st.image(str(media_path.joinpath("omdena_logo.jpg")), use_column_width='auto')
 
 show_pages(
     [
-        Page("main.py", "Home", "🏠"),
+        Page(root_path.joinpath("main.py"), "Home", "🏠"),
         Page(pages_path.joinpath("EDA.py"), "EDA", ":books:"),
         Page(pages_path.joinpath("Crop_Selections.py"), "Crop Selection", "🌿"),
         Page(pages_path.joinpath("Yield_Prediction.py"), "Yield Prediction", "🌾")
