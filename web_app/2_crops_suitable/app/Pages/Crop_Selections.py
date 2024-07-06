@@ -3,6 +3,11 @@ import pandas as pd
 import pickle
 from utils import utils
 from st_pages import add_page_title
+from pathlib import Path
+
+root_path = Path(__file__).parent.parent
+media_path = root_path.joinpath("media")
+
 
 def app():
     # Title
@@ -62,9 +67,9 @@ def app():
 
     # Load the models
     try:
-        with open('./classifycrop.pkl', 'rb') as file:
+        with open(root_path.joinpath('classifycrop.pkl'), 'rb') as file:
             classify_model = pickle.load(file)
-        with open('./predictingyield.pkl', 'rb') as file:
+        with open(root_path.joinpath('predictingyield.pkl'), 'rb') as file:
             yield_model = pickle.load(file)
 
         # Ensure all expected columns are present
@@ -112,6 +117,6 @@ def app():
 utils.set_custom_bg()
 utils.custom_navbar()
 # Sidebar image
-st.sidebar.image("./media/omdena_logo_navigation.png", use_column_width='always')
+st.sidebar.image(str(media_path.joinpath("omdena_logo_navigation.png")), use_column_width='always')
 app()
 add_page_title(layout="wide")

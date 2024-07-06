@@ -1,9 +1,12 @@
 import base64
 import streamlit as st
+from pathlib import Path
 
+root_path = Path(__file__).parent.parent
+media_path = root_path.joinpath("media")
 
 # Function to add a background image from a file
-def set_custom_bg(image_file="./media/bg_17.jpeg"):
+def set_custom_bg(image_file=str(media_path.joinpath("bg_17.jpeg"))):
     with open(image_file, "rb") as image:
         encoded_image = base64.b64encode(image.read()).decode()
 
@@ -62,4 +65,4 @@ def custom_navbar():
 
 if __name__ == "__main__":
     # Add the background image
-    set_custom_bg('./media/bg_16.png')
+    set_custom_bg(str(media_path.joinpath('bg_16.png')))

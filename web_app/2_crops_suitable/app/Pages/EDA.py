@@ -13,9 +13,13 @@ import plotly.express as px
 from st_pages import add_page_title
 from utils import utils
 import numpy as np
+from pathlib import Path
+
+root_path = Path(__file__).parent.parent
+data_path = root_path.joinpath("data")
 
 def load_data():
-    return pd.read_csv(r'.\data\preprocessed_700.csv')
+    return pd.read_csv(data_path.joinpath('preprocessed_700.csv'))
 
 # Define a function to display EDA graphs
 def display_eda(data):

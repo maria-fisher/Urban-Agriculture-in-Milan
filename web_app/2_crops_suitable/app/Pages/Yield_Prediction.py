@@ -3,10 +3,14 @@ import pandas as pd
 import pickle
 from st_pages import add_page_title
 from utils import utils
+from pathlib import Path
+
+root_path = Path(__file__).parent.parent
+media_path = root_path.joinpath("media")
 
 def app():
     # Load the trained model
-    model_path = ".\predictingyield.pkl"
+    model_path = root_path.joinpath("predictingyield.pkl")
     with open(model_path, 'rb') as file:
         model = pickle.load(file)
 
@@ -83,6 +87,6 @@ def app():
 utils.set_custom_bg()
 utils.custom_navbar()
 # Sidebar image
-st.sidebar.image("./media/omdena_logo_navigation.png", use_column_width='always')
+st.sidebar.image(str(media_path.joinpath("omdena_logo_navigation.png")), use_column_width='always')
 app()
 add_page_title(layout="wide")

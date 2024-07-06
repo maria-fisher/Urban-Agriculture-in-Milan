@@ -7,6 +7,10 @@ from PIL import Image
 from streamlit_option_menu import option_menu
 from utils import utils
 from st_pages import Page, show_pages, add_page_title
+from pathlib import Path
+
+root_path = Path(__file__).parent
+media_path = root_path.joinpath("media")
 
 st.set_page_config(
     page_title="Crop Selection and Yield Prediction for Urban Farming in Milan",
@@ -66,7 +70,7 @@ For more information, please reach out to our team at [email@example.com](mailto
 """)
 
 # Display Image
-st.image("./media/omdena_logo.jpg", use_column_width='auto')
+st.image(str(media_path.joinpath("omdena_logo.jpg")), use_column_width='auto')
 
 
 show_pages(
