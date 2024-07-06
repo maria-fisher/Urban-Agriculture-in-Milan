@@ -17,6 +17,7 @@ from pathlib import Path
 
 root_path = Path(__file__).parent.parent
 data_path = root_path.joinpath("data")
+media_path = root_path.joinpath("media")
 
 def load_data():
     return pd.read_csv(data_path.joinpath('preprocessed_700.csv'))
@@ -64,7 +65,7 @@ data = load_data()
 utils.set_custom_bg()
 utils.custom_navbar()
 # Sidebar image
-st.sidebar.image("./media/omdena_logo_navigation.png", use_column_width='always')
+st.sidebar.image(media_path.joinpath("omdena_logo_navigation.png"), use_column_width='always')
 # Display EDA graphs
 display_eda(data.select_dtypes(include=np.number))
 add_page_title(layout="wide")
