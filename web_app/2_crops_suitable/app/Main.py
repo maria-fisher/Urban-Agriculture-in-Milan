@@ -18,7 +18,7 @@ st.set_page_config(
     layout="wide",
     )
 # Sidebar image
-st.sidebar.image("./media/omdena_logo_navigation.png", use_column_width='always')
+st.sidebar.image(str(media_path.joinpath("omdena_logo_navigation.png")), use_column_width='always')
 
 utils.set_custom_bg()
 utils.custom_navbar()
