@@ -11,7 +11,7 @@ from pathlib import Path
 
 root_path = Path(__file__).parent
 media_path = root_path.joinpath("media")
-pages_path = root_path.joinpath('pages')
+pages_path = root_path.joinpath('Pages')
 
 st.set_page_config(
     page_title="Crop Selection and Yield Prediction for Urban Farming in Milan",
