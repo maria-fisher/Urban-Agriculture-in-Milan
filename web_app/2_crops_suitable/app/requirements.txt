@@ -6,3 +6,4 @@ streamlit_folium==0.21.0
 streamlit_option_menu==0.3.13
 scikit-learn==1.5.1
 xgboost==2.0.3
+matplotlib
