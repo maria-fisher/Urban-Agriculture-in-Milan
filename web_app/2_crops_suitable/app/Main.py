@@ -11,6 +11,7 @@ from pathlib import Path
 
 root_path = Path(__file__).parent
 media_path = root_path.joinpath("media")
+pages_path = root_path.joinpath('pages')
 
 st.set_page_config(
     page_title="Crop Selection and Yield Prediction for Urban Farming in Milan",
@@ -76,9 +77,9 @@ st.image(str(media_path.joinpath("omdena_logo.jpg")), use_column_width='auto')
 show_pages(
     [
         Page("main.py", "Home", "🏠"),
-        Page("pages/EDA.py", "EDA", ":books:"),
-        Page("pages/Crop_Selections.py", "Crop Selection", "🌿"),
-        Page("Pages/Yield_Prediction.py", "Yield Prediction", "🌾")
+        Page(pages_path.joinpath("EDA.py"), "EDA", ":books:"),
+        Page(pages_path.joinpath("Crop_Selections.py"), "Crop Selection", "🌿"),
+        Page(pages_path.joinpath("Yield_Prediction.py"), "Yield Prediction", "🌾")
     ]
 )
 
