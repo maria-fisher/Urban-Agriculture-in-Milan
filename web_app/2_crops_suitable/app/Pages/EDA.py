@@ -65,7 +65,7 @@ data = load_data()
 utils.set_custom_bg()
 utils.custom_navbar()
 # Sidebar image
-st.sidebar.image(media_path.joinpath("omdena_logo_navigation.png"), use_column_width='always')
+st.sidebar.image(str(media_path.joinpath("omdena_logo_navigation.png")), use_column_width='always')
 # Display EDA graphs
 display_eda(data.select_dtypes(include=np.number))
 add_page_title(layout="wide")
