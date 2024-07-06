@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 from predict_supervised import predict as predict_supervised
 from predict_unsupervised import predict_unsupervised
-from data_fetcher import DataFetcher
 import folium
 from streamlit_folium import folium_static
 

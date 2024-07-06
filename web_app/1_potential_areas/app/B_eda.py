@@ -5,7 +5,7 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from pathlib import Path
-
+from handler import read_parquet, LOOKER_URL
 
 # Root Path
 root_path = Path(__file__).parent.parent.parent.parent
@@ -13,14 +13,6 @@ data_dir = root_path.joinpath("web_app/1_potential_areas/app/dataset")
 data_path = "merged_2023.parquet"
 
 
-@st.cache_data
-def read_parquet(filename):
-    df = pd.read_parquet(
-        data_dir.joinpath(filename),
-        engine="pyarrow",
-        dtype_backend="pyarrow",
-    )
-    return df
 
 # Function to classify vegetation based on NDVI value
 def classify_vegetation(ndvi):
@@ -143,21 +135,18 @@ def eda_page():
     Data was collected from various sources such as satellite imagery, geographical surveys, and climate databases.
     Techniques used include remote sensing, GIS analysis, and environmental monitoring.
     """)
-
-    # Looker Studio report URL
-    report_url = "https://lookerstudio.google.com/embed/reporting/eaab71cb-575f-4f7c-b9ac-97942e43d017/page/r2W2D"
-
+    
     # Create the iframe HTML
     iframe_code = f"""
-    <iframe width="100%" height="1000" src="{report_url}" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+    <iframe width="100%" height="1000" src="{LOOKER_URL}" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     """
 
     # Display the iframe using Streamlit's components.html function
     components.html(iframe_code, height=1000)
 
-    # Read CSVs
-    # loading ndvi, ndbi and bu(built-up)
-    data = read_parquet(data_path)
+    # Read data
+    filepath = data_dir.joinpath(data_path)
+    data = read_parquet(filepath)
 
     # Apply the classification function to the NDVI column and create a class column
     data["class"] = data["NDVI"].apply(classify_vegetation)

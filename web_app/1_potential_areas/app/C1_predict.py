@@ -4,16 +4,13 @@ import pandas as pd
 import streamlit as st
 from streamlit_folium import folium_static
 from pathlib import Path
+from handler import load_model
 
+# PATHS
 root_path = Path(__file__).parent.parent.parent.parent
 models_path = root_path.joinpath("web_app/1_potential_areas/app/models")
 
-# Load the models (adjust paths as necessary)
-def load_model(model_path):
-    with open(model_path, "rb") as f:
-        model = pickle.load(f)
-    return model
-
+# Load models
 supervised_model = load_model(models_path.joinpath("XGBClassifier_Pipeline_Optuna_Vidhi.pkl"))
 unsupervised_model = load_model(models_path.joinpath("kmeans_model_pipeline.pkl"))
 
