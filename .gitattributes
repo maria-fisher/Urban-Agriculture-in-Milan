@@ -1,3 +1,2 @@
 # .gitattributes
-
 web_app/3_pests_diseases/app/prediction_artifacts/**/*.pth filter=lfs diff=lfs merge=lfs -text

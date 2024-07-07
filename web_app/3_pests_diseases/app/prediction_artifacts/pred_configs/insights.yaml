@@ -1,0 +1,541 @@
+cucumber:
+  anthracnose_fungi:
+    description: "Anthracnose is caused by fungi and affects cucumber fruits and leaves."
+    control_measures:
+      - "**Cultural Practices:** Remove infected plant debris and rotate crops to non-host species."
+      - "**Biological Controls:** Use Trichoderma species as a biocontrol agent."
+      - "**Chemical Interventions:** Apply fungicides containing chlorothalonil or copper."
+    preventive_measures:
+      - "**Plant Resistant Varieties:** Select cucumber varieties resistant to Anthracnose."
+      - "**Proper Irrigation:** Avoid overhead irrigation and ensure proper plant spacing."
+      - "**Urban Specific:** Protect plants from air pollutants and ensure good air circulation."
+
+  bacterial_wilt_bacteria:
+    description: "Bacterial Wilt is caused by bacteria and affects cucumber vascular system."
+    control_measures:
+      - "**Cultural Practices:** Control cucumber beetles which spread the bacteria and use resistant varieties."
+      - "**Biological Controls:** Use beneficial nematodes to reduce beetle larvae."
+      - "**Chemical Interventions:** Use insecticides to control cucumber beetles."
+    preventive_measures:
+      - "**Crop Rotation:** Rotate crops with non-susceptible plants like legumes."
+      - "**Sanitized Tools:** Use sanitized tools to avoid spreading bacteria between plants."
+      - "**Urban Specific:** Monitor and mitigate pollution effects on plant health."
+
+  belly_rot_fungi:
+    description: "Belly Rot is caused by fungi and affects cucumber fruits."
+    control_measures:
+      - "**Cultural Practices:** Ensure good drainage and avoid overhead irrigation."
+      - "**Biological Controls:** Apply Bacillus subtilis to the soil."
+      - "**Chemical Interventions:** Use fungicides like azoxystrobin."
+    preventive_measures:
+      - "**Mulching:** Use organic mulches to reduce soil splash onto fruits."
+      - "**Remove Infected Plants:** Promptly remove and destroy infected plants."
+      - "**Urban Specific:** Use filtered water for irrigation to reduce chemical exposure."
+
+  downy_mildew_fungi:
+    description: "Downy Mildew is caused by fungi and affects cucumber leaves."
+    control_measures:
+      - "**Cultural Practices:** Promote air circulation and reduce leaf wetness."
+      - "**Biological Controls:** Introduce beneficial microbes like Pseudomonas fluorescens."
+      - "**Chemical Interventions:** Apply fungicides such as mancozeb or copper hydroxide."
+    preventive_measures:
+      - "**Resistant Varieties:** Plant cucumber varieties resistant to Downy Mildew."
+      - "**Timely Irrigation:** Avoid evening watering to reduce leaf wetness."
+      - "**Urban Specific:** Install wind barriers to protect plants from urban air currents."
+
+  gummy_stem_blight_fungi:
+    description: "Gummy Stem Blight is caused by fungi and affects cucumber vines."
+    control_measures:
+      - "**Cultural Practices:** Use disease-free seeds and avoid wounding plants."
+      - "**Biological Controls:** Use biocontrol agents like Trichoderma harzianum."
+      - "**Chemical Interventions:** Apply fungicides such as thiophanate-methyl."
+    preventive_measures:
+      - "**Crop Rotation:** Rotate cucumbers with non-host crops like beans or lettuce."
+      - "**Weed Management:** Control weeds that can harbor the fungi."
+      - "**Urban Specific:** Implement vertical farming techniques to save space."
+
+  healthy_cucumber:
+    description: "No disease detected, cucumber plant is healthy."
+    control_measures:
+      - "**Cultural Practices:** Maintain good gardening practices and monitor plant health."
+      - "**Biological Controls:** Enhance soil health with compost and organic matter."
+      - "**Chemical Interventions:** No chemical interventions necessary for healthy plants."
+    preventive_measures:
+      - "**Regular Monitoring:** Regularly inspect plants for early signs of disease."
+      - "**Balanced Fertilization:** Avoid over-fertilization which can stress plants."
+      - "**Urban Specific:** Use organic fertilizers to minimize chemical runoff."
+
+  healthy_leaf:
+    description: "No disease detected, cucumber leaf is healthy."
+    control_measures:
+      - "**Cultural Practices:** Promote plant health through proper watering and fertilization."
+      - "**Biological Controls:** Attract beneficial insects like ladybugs to the garden."
+      - "**Chemical Interventions:** No chemical interventions necessary for healthy leaves."
+    preventive_measures:
+      - "**Proper Airflow:** Prune overcrowded areas to improve air circulation."
+      - "**Avoid Overhead Irrigation:** Water plants at the base to reduce leaf wetness."
+      - "**Urban Specific:** Use natural pest repellents to avoid chemical exposure."
+
+  pythium_fruit_rot_fungi:
+    description: "Pythium Fruit Rot is caused by fungi and affects cucumber fruits."
+    control_measures:
+      - "**Cultural Practices:** Improve soil drainage and avoid waterlogged conditions."
+      - "**Biological Controls:** Use biocontrol agents like Pythium oligandrum."
+      - "**Chemical Interventions:** Apply fungicides such as metalaxyl or mefenoxam."
+    preventive_measures:
+      - "**Raised Beds:** Plant cucumbers in raised beds to improve drainage."
+      - "**Crop Rotation:** Rotate cucumbers with non-susceptible crops like corn or peppers."
+      - "**Urban Specific:** Implement hydroponic systems for disease-free growing."
+apple:
+  healthy:
+    description: "No disease detected, apple tree is healthy."
+    control_measures:
+      - "**Cultural Practices:** Maintain proper pruning and sanitation practices."
+      - "**Biological Controls:** Encourage natural predators like ladybugs."
+      - "**Chemical Interventions:** No chemical interventions necessary for healthy trees."
+    preventive_measures:
+      - "**Regular Monitoring:** Inspect trees regularly for signs of pests and diseases."
+      - "**Balanced Fertilization:** Apply fertilizers based on soil test results."
+      - "**Urban Specific:** Use organic fertilizers to minimize chemical runoff."
+
+  rust:
+    description: "Rust is caused by fungi and affects apple leaves."
+    control_measures:
+      - "**Cultural Practices:** Prune infected branches and remove fallen leaves."
+      - "**Biological Controls:** Introduce beneficial fungi like Trichoderma."
+      - "**Chemical Interventions:** Apply fungicides containing sulfur or copper."
+    preventive_measures:
+      - "**Resistant Varieties:** Plant apple varieties resistant to Rust."
+      - "**Proper Airflow:** Maintain good air circulation around trees."
+      - "**Urban Specific:** Install wind barriers to protect trees from urban pollutants."
+
+  scab:
+    description: "Scab is caused by fungi and affects apple fruits and leaves."
+    control_measures:
+      - "**Cultural Practices:** Remove infected plant debris and promote good drainage."
+      - "**Biological Controls:** Apply Bacillus subtilis to reduce fungal spores."
+      - "**Chemical Interventions:** Use fungicides like captan or mancozeb."
+    preventive_measures:
+      - "**Early Detection:** Monitor trees for early signs of scab and take prompt action."
+      - "**Proper Pruning:** Prune trees to improve air circulation and reduce humidity."
+      - "**Urban Specific:** Implement integrated pest management (IPM) strategies in urban orchards."
+
+
+grapes:
+  black_measles:
+    description: "Black Measles affects grapevine wood and is caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Prune infected wood and improve air circulation."
+      - "**Biological Controls:** Apply biological agents like Trichoderma."
+      - "**Chemical Interventions:** Use fungicides containing copper."
+    preventive_measures:
+      - "**Resistant Varieties:** Plant grape varieties resistant to Black Measles."
+      - "**Proper Pruning:** Prune vines properly to reduce disease spread."
+      - "**Urban Specific:** Use organic fungicides to minimize environmental impact."
+
+  black_rot:
+    description: "Black Rot affects grapevine leaves and fruits, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy infected plant parts."
+      - "**Biological Controls:** Encourage natural predators of fungal spores."
+      - "**Chemical Interventions:** Apply fungicides like captan or thiophanate-methyl."
+    preventive_measures:
+      - "**Sanitation:** Keep the vineyard clean and remove fallen leaves."
+      - "**Timely Spraying:** Apply fungicides preventively during wet conditions."
+      - "**Urban Specific:** Implement vineyard management practices to reduce urban heat stress."
+
+  healthy:
+    description: "No disease detected, grapevine is healthy."
+    control_measures:
+      - "**Cultural Practices:** Maintain vineyard hygiene and monitor plant health."
+      - "**Biological Controls:** Use beneficial insects and microbes for pest control."
+      - "**Chemical Interventions:** No chemical interventions necessary for healthy vines."
+    preventive_measures:
+      - "**Regular Monitoring:** Regularly scout for pests and diseases."
+      - "**Balanced Fertilization:** Apply fertilizers based on soil analysis."
+      - "**Urban Specific:** Optimize irrigation practices for urban microclimates."
+
+  isariopsis_leaf_spot:
+    description: "Isariopsis Leaf Spot affects grapevine leaves, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Remove infected leaves and improve air circulation."
+      - "**Biological Controls:** Use biological fungicides or antagonistic microbes."
+      - "**Chemical Interventions:** Apply fungicides containing strobilurins or triazoles."
+    preventive_measures:
+      - "**Early Detection:** Monitor vines closely for early signs of leaf spots."
+      - "**Proper Spacing:** Maintain proper vine spacing to improve air flow."
+      - "**Urban Specific:** Implement sustainable pest management strategies in urban settings."
+
+
+lettuce:
+  downy_mildew:
+    description: "Downy Mildew affects lettuce leaves, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Promote good air circulation and reduce leaf wetness."
+      - "**Biological Controls:** Use biofungicides containing Bacillus subtilis."
+      - "**Chemical Interventions:** Apply fungicides like copper-based compounds."
+    preventive_measures:
+      - "**Resistant Varieties:** Plant lettuce varieties resistant to Downy Mildew."
+      - "**Proper Spacing:** Maintain adequate plant spacing for airflow."
+      - "**Urban Specific:** Implement raised bed gardening to improve drainage."
+
+  shoot_blight:
+    description: "Shoot Blight affects lettuce stems and leaves, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy infected plant parts."
+      - "**Biological Controls:** Introduce beneficial microbes for disease suppression."
+      - "**Chemical Interventions:** Apply fungicides containing chlorothalonil."
+    preventive_measures:
+      - "**Sanitation:** Keep the garden clean and remove debris."
+      - "**Proper Irrigation:** Water at the base of plants to avoid wetting foliage."
+      - "**Urban Specific:** Use organic fungicides to minimize environmental impact."
+
+  healthy:
+    description: "No disease detected, lettuce plant is healthy."
+    control_measures:
+      - "**Cultural Practices:** Practice crop rotation and maintain soil fertility."
+      - "**Biological Controls:** Enhance soil health with compost and organic matter."
+      - "**Chemical Interventions:** No chemical interventions necessary for healthy plants."
+    preventive_measures:
+      - "**Regular Monitoring:** Monitor plants regularly for signs of pests and diseases."
+      - "**Balanced Nutrition:** Apply balanced fertilization based on soil test results."
+      - "**Urban Specific:** Implement integrated pest management practices in urban gardens."
+potato:
+  black_scurf:
+    description: "Black Scurf affects potato tubers, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Use certified disease-free seed potatoes."
+      - "**Biological Controls:** Apply biofungicides containing Bacillus subtilis."
+      - "**Chemical Interventions:** Use fungicides like mancozeb or chlorothalonil."
+    preventive_measures:
+      - "**Crop Rotation:** Rotate potatoes with non-host crops like beans or corn."
+      - "**Proper Storage:** Store harvested potatoes in cool, dry conditions."
+      - "**Urban Specific:** Implement container gardening for urban potato cultivation."
+
+  colorado_potato_beetle:
+    description: "Colorado Potato Beetle affects potato leaves and stems."
+    control_measures:
+      - "**Cultural Practices:** Handpick beetles and destroy egg clusters."
+      - "**Biological Controls:** Introduce natural predators like parasitic wasps."
+      - "**Chemical Interventions:** Use insecticides like neem oil or pyrethroids."
+    preventive_measures:
+      - "**Early Detection:** Monitor plants for signs of beetle activity."
+      - "**Companion Planting:** Plant repellent herbs like basil or marigold."
+      - "**Urban Specific:** Use floating row covers to protect plants from pests."
+
+  common_scab:
+    description: "Common Scab affects potato tubers, caused by bacteria."
+    control_measures:
+      - "**Cultural Practices:** Plant disease-free seed potatoes in well-drained soil."
+      - "**Biological Controls:** Use beneficial soil bacteria like Bacillus subtilis."
+      - "**Chemical Interventions:** Apply soil amendments to adjust pH levels."
+    preventive_measures:
+      - "**Soil Moisture:** Maintain consistent soil moisture levels."
+      - "**Avoid Over-Fertilization:** Apply balanced fertilization to avoid scab-promoting conditions."
+      - "**Urban Specific:** Implement raised bed gardening to control soil pH and moisture."
+
+  healthy:
+    description: "No disease detected, potato plant is healthy."
+    control_measures:
+      - "**Cultural Practices:** Practice crop rotation and sanitation."
+      - "**Biological Controls:** Enhance soil health with organic matter."
+      - "**Chemical Interventions:** No chemical interventions necessary for healthy plants."
+    preventive_measures:
+      - "**Regular Monitoring:** Inspect plants regularly for signs of pests and diseases."
+      - "**Balanced Nutrition:** Apply fertilizers based on soil test results."
+      - "**Urban Specific:** Use organic fertilizers to minimize environmental impact."
+
+
+strawberry_fruit:
+  anthracnose_fruit_rot_fungus:
+    description: "Anthracnose Fruit Rot affects strawberry fruits, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Promote good air circulation and reduce leaf wetness."
+      - "**Biological Controls:** Apply biofungicides containing Bacillus subtilis."
+      - "**Chemical Interventions:** Use fungicides like copper-based compounds."
+    preventive_measures:
+      - "**Resistant Varieties:** Plant strawberry varieties resistant to Anthracnose."
+      - "**Proper Spacing:** Maintain adequate plant spacing for airflow."
+      - "**Urban Specific:** Implement raised bed gardening to improve drainage."
+
+  blossom_blight_flower_fungus:
+    description: "Blossom Blight affects strawberry flowers, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy infected flowers."
+      - "**Biological Controls:** Introduce beneficial microbes for disease suppression."
+      - "**Chemical Interventions:** Apply fungicides containing captan or thiophanate-methyl."
+    preventive_measures:
+      - "**Sanitation:** Keep the garden clean and remove debris."
+      - "**Proper Irrigation:** Water at the base of plants to avoid wetting flowers."
+      - "**Urban Specific:** Use organic fungicides to minimize environmental impact."
+
+  gray_mold_fruit_fungus:
+    description: "Gray Mold affects strawberry fruits, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Remove infected fruits and improve air circulation."
+      - "**Biological Controls:** Use biological fungicides or antagonistic microbes."
+      - "**Chemical Interventions:** Apply fungicides containing botrytis-activated ingredients."
+    preventive_measures:
+      - "**Early Detection:** Monitor plants closely for signs of gray mold."
+      - "**Proper Pruning:** Prune plants to improve air circulation and reduce humidity."
+      - "**Urban Specific:** Implement sustainable pest management strategies in urban gardens."
+
+  powdery_mildew_fruit_fungus:
+    description: "Powdery Mildew affects strawberry fruits, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Promote good air circulation and avoid overhead irrigation."
+      - "**Biological Controls:** Use biofungicides containing Bacillus subtilis."
+      - "**Chemical Interventions:** Apply fungicides like sulfur or potassium bicarbonate."
+    preventive_measures:
+      - "**Resistant Varieties:** Plant strawberry varieties resistant to Powdery Mildew."
+      - "**Proper Fertilization:** Apply balanced fertilization to maintain plant health."
+      - "**Urban Specific:** Optimize irrigation practices for urban microclimates."
+
+
+strawberry_leaves:
+  angular_leaf_spots_bacteria:
+    description: "Angular Leaf Spots affects strawberry leaves, caused by bacteria."
+    control_measures:
+      - "**Cultural Practices:** Avoid overhead irrigation and reduce leaf wetness."
+      - "**Biological Controls:** Apply copper-based biofungicides."
+      - "**Chemical Interventions:** Use bactericides like streptomycin."
+    preventive_measures:
+      - "**Resistant Varieties:** Plant strawberry varieties resistant to Angular Leaf Spots."
+      - "**Proper Spacing:** Maintain proper plant spacing for airflow."
+      - "**Urban Specific:** Implement raised bed gardening to improve drainage."
+
+  healthy:
+    description: "No disease detected, strawberry plant is healthy."
+    control_measures:
+      - "**Cultural Practices:** Practice crop rotation and monitor plant health."
+      - "**Biological Controls:** Enhance soil health with organic matter."
+      - "**Chemical Interventions:** No chemical interventions necessary for healthy plants."
+    preventive_measures:
+      - "**Regular Monitoring:** Inspect plants regularly for signs of pests and diseases."
+      - "**Balanced Nutrition:** Apply fertilizers based on soil test results."
+      - "**Urban Specific:** Use organic fertilizers to minimize environmental impact."
+
+  leaf_scorch_fungus:
+    description: "Leaf Scorch affects strawberry leaves, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Prune infected leaves and improve air circulation."
+      - "**Biological Controls:** Use biological fungicides or beneficial fungi."
+      - "**Chemical Interventions:** Apply fungicides containing chlorothalonil or mancozeb."
+    preventive_measures:
+      - "**Early Detection:** Monitor plants closely for signs of leaf scorch."
+      - "**Proper Irrigation:** Water at the base of plants to avoid wetting foliage."
+      - "**Urban Specific:** Implement integrated pest management practices in urban gardens."
+
+  leaf_spot_fungus:
+    description: "Leaf Spot affects strawberry leaves, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Remove infected leaves and maintain garden hygiene."
+      - "**Biological Controls:** Use biological fungicides or microbial antagonists."
+      - "**Chemical Interventions:** Apply fungicides like captan or myclobutanil."
+    preventive_measures:
+      - "**Sanitation:** Keep the garden clean and remove debris."
+      - "**Proper Airflow:** Ensure good air circulation around plants."
+      - "**Urban Specific:** Use sustainable gardening practices to minimize disease spread."
+
+
+tomato:
+  bacterial_spot:
+    description: "Bacterial Spot affects tomato leaves, stems, and fruit, caused by bacteria."
+    control_measures:
+      - "**Cultural Practices:** Avoid working in wet fields and rotate crops."
+      - "**Biological Controls:** Apply copper-based biofungicides."
+      - "**Chemical Interventions:** Use bactericides like copper hydroxide or copper oxychloride."
+    preventive_measures:
+      - "**Resistant Varieties:** Plant tomato varieties resistant to Bacterial Spot."
+      - "**Proper Spacing:** Ensure adequate plant spacing for air circulation."
+      - "**Urban Specific:** Use raised beds to improve drainage and reduce disease incidence."
+
+  early_blight:
+    description: "Early Blight affects tomato leaves and stems, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy infected plant debris."
+      - "**Biological Controls:** Use biofungicides containing Bacillus subtilis."
+      - "**Chemical Interventions:** Apply fungicides such as chlorothalonil or mancozeb."
+    preventive_measures:
+      - "**Crop Rotation:** Rotate crops to reduce fungal spores in the soil."
+      - "**Mulching:** Use mulch to prevent soil splash."
+      - "**Urban Specific:** Implement drip irrigation to keep foliage dry."
+
+  healthy:
+    description: "No disease detected, tomato plant is healthy."
+    control_measures:
+      - "**Cultural Practices:** Practice crop rotation and maintain garden hygiene."
+      - "**Biological Controls:** Enhance soil health with organic matter."
+      - "**Chemical Interventions:** No chemical interventions necessary for healthy plants."
+    preventive_measures:
+      - "**Regular Monitoring:** Inspect plants regularly for signs of pests and diseases."
+      - "**Balanced Nutrition:** Apply fertilizers based on soil test results."
+      - "**Urban Specific:** Use organic fertilizers to minimize environmental impact."
+
+  late_blight:
+    description: "Late Blight affects tomato leaves, stems, and fruit, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy infected plant material."
+      - "**Biological Controls:** Apply biofungicides containing Trichoderma harzianum."
+      - "**Chemical Interventions:** Use fungicides like chlorothalonil or copper-based sprays."
+    preventive_measures:
+      - "**Early Detection:** Monitor plants closely for signs of late blight."
+      - "**Proper Irrigation:** Water at the base of plants to avoid wetting foliage."
+      - "**Urban Specific:** Use raised beds and ensure good drainage."
+
+  leaf_mold:
+    description: "Leaf Mold affects tomato leaves, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Prune infected leaves and increase air circulation."
+      - "**Biological Controls:** Use biological fungicides or beneficial microbes."
+      - "**Chemical Interventions:** Apply fungicides such as chlorothalonil or mancozeb."
+    preventive_measures:
+      - "**Sanitation:** Maintain garden hygiene and remove plant debris."
+      - "**Proper Airflow:** Ensure good air circulation around plants."
+      - "**Urban Specific:** Implement integrated pest management practices."
+
+  mosaic_virus:
+    description: "Mosaic Virus affects tomato leaves, causing mottling and distortion."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy infected plants."
+      - "**Biological Controls:** Promote beneficial insects to control aphid vectors."
+      - "**Chemical Interventions:** Use insecticidal soaps to control aphid populations."
+    preventive_measures:
+      - "**Resistant Varieties:** Plant tomato varieties resistant to Mosaic Virus."
+      - "**Pest Control:** Monitor and control aphid populations."
+      - "**Urban Specific:** Use reflective mulches to deter aphids."
+
+  septoria_leaf_spot:
+    description: "Septoria Leaf Spot affects tomato leaves, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Remove infected leaves and maintain garden hygiene."
+      - "**Biological Controls:** Apply biofungicides containing Bacillus subtilis."
+      - "**Chemical Interventions:** Use fungicides like chlorothalonil or copper-based sprays."
+    preventive_measures:
+      - "**Sanitation:** Keep the garden clean and remove plant debris."
+      - "**Proper Airflow:** Ensure good air circulation around plants."
+      - "**Urban Specific:** Use drip irrigation to minimize leaf wetness."
+
+  target_spot:
+    description: "Target Spot affects tomato leaves, stems, and fruit, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy infected plant material."
+      - "**Biological Controls:** Use biofungicides containing Trichoderma harzianum."
+      - "**Chemical Interventions:** Apply fungicides such as chlorothalonil or mancozeb."
+    preventive_measures:
+      - "**Early Detection:** Monitor plants closely for signs of target spot."
+      - "**Proper Irrigation:** Water at the base of plants to avoid wetting foliage."
+      - "**Urban Specific:** Implement raised bed gardening to improve drainage."
+
+  two_spotted_spider_mite:
+    description: "Two-Spotted Spider Mite affects tomato leaves, causing stippling and webbing."
+    control_measures:
+      - "**Cultural Practices:** Remove heavily infested leaves and maintain plant health."
+      - "**Biological Controls:** Introduce predatory mites such as Phytoseiulus persimilis."
+      - "**Chemical Interventions:** Use miticides like abamectin or horticultural oils."
+    preventive_measures:
+      - "**Regular Monitoring:** Inspect plants regularly for signs of spider mites."
+      - "**Moisture Management:** Keep plants adequately watered to reduce mite populations."
+      - "**Urban Specific:** Use organic miticides to minimize environmental impact."
+
+  yellow_leaf_curl_virus:
+    description: "Yellow Leaf Curl Virus affects tomato leaves, causing yellowing and curling."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy infected plants."
+      - "**Biological Controls:** Promote beneficial insects to control whitefly vectors."
+      - "**Chemical Interventions:** Use insecticidal soaps or neem oil to control whitefly populations."
+    preventive_measures:
+      - "**Resistant Varieties:** Plant tomato varieties resistant to Yellow Leaf Curl Virus."
+      - "**Pest Control:** Monitor and control whitefly populations."
+      - "**Urban Specific:** Use reflective mulches to deter whiteflies."
+
+orange:
+  black_spot:
+    description: "Black Spot affects orange fruit, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Remove fallen fruit and prune infected branches."
+      - "**Biological Controls:** Apply biofungicides containing Bacillus subtilis."
+      - "**Chemical Interventions:** Use fungicides like copper-based products."
+    preventive_measures:
+      - "**Sanitation:** Maintain orchard hygiene by removing plant debris."
+      - "**Proper Irrigation:** Ensure proper irrigation to avoid water stress."
+      - "**Urban Specific:** Implement mulching to reduce soil splash."
+
+  canker:
+    description: "Canker affects orange leaves, stems, and fruit, caused by bacteria."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy infected plant parts."
+      - "**Biological Controls:** Apply copper-based biofungicides."
+      - "**Chemical Interventions:** Use bactericides like copper hydroxide or copper oxychloride."
+    preventive_measures:
+      - "**Resistant Varieties:** Plant orange varieties resistant to Canker."
+      - "**Proper Spacing:** Ensure adequate plant spacing for air circulation."
+      - "**Urban Specific:** Use windbreaks to reduce the spread of bacteria."
+
+  greening:
+    description: "Greening affects orange trees, caused by bacteria transmitted by psyllid insects."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy infected trees."
+      - "**Biological Controls:** Introduce natural predators of psyllids."
+      - "**Chemical Interventions:** Use insecticides to control psyllid populations."
+    preventive_measures:
+      - "**Resistant Varieties:** Plant orange varieties resistant to Greening."
+      - "**Pest Control:** Monitor and control psyllid populations."
+      - "**Urban Specific:** Use reflective mulches to deter psyllids."
+
+  scab:
+    description: "Scab affects orange fruit, leaves, and twigs, caused by fungi."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy infected plant material."
+      - "**Biological Controls:** Apply biofungicides containing Bacillus subtilis."
+      - "**Chemical Interventions:** Use fungicides like copper-based products."
+    preventive_measures:
+      - "**Early Detection:** Monitor plants closely for signs of scab."
+      - "**Proper Irrigation:** Ensure proper irrigation to avoid water stress."
+      - "**Urban Specific:** Implement raised bed gardening to improve drainage."
+
+  bacteria_citrus:
+    description: "Bacteria Citrus affects orange trees, causing leaf and fruit spots."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy infected plant material."
+      - "**Biological Controls:** Apply copper-based biofungicides."
+      - "**Chemical Interventions:** Use bactericides like copper hydroxide or copper oxychloride."
+    preventive_measures:
+      - "**Sanitation:** Maintain orchard hygiene by removing plant debris."
+      - "**Proper Spacing:** Ensure adequate plant spacing for air circulation."
+      - "**Urban Specific:** Use windbreaks to reduce the spread of bacteria."
+
+  fungus_penicillium:
+    description: "Fungus Penicillium affects orange fruit, causing mold."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy infected fruit."
+      - "**Biological Controls:** Apply biofungicides containing Trichoderma harzianum."
+      - "**Chemical Interventions:** Use fungicides like imazalil or thiabendazole."
+    preventive_measures:
+      - "**Storage Conditions:** Store fruit in cool, dry conditions to prevent mold growth."
+      - "**Proper Handling:** Handle fruit carefully to avoid injuries."
+      - "**Urban Specific:** Use organic fungicides to minimize environmental impact."
+
+  healthy:
+    description: "No disease detected, orange tree is healthy."
+    control_measures:
+      - "**Cultural Practices:** Practice crop rotation and maintain orchard hygiene."
+      - "**Biological Controls:** Enhance soil health with organic matter."
+      - "**Chemical Interventions:** No chemical interventions necessary for healthy plants."
+    preventive_measures:
+      - "**Regular Monitoring:** Inspect trees regularly for signs of pests and diseases."
+      - "**Balanced Nutrition:** Apply fertilizers based on soil test results."
+      - "**Urban Specific:** Use organic fertilizers to minimize environmental impact."
+
+  pest_psyllid:
+    description: "Psyllid insects affect orange trees, transmitting diseases like Greening."
+    control_measures:
+      - "**Cultural Practices:** Remove and destroy heavily infested plant material."
+      - "**Biological Controls:** Introduce natural predators of psyllids."
+      - "**Chemical Interventions:** Use insecticides to control psyllid populations."
+    preventive_measures:
+      - "**Pest Control:** Monitor and control psyllid populations."
+      - "**Reflective Mulch:** Use reflective mulches to deter psyllids."
+      - "**Urban Specific:** Implement integrated pest management practices."
+
+

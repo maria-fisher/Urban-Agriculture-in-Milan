@@ -1,0 +1,55 @@
+crops:
+  apple:
+    - Choose a sunny location with well-drained soil.
+    - Water regularly, especially during dry periods.
+    - Prune trees to maintain their shape and remove dead branches.
+    - Fertilize in the early spring with a balanced fertilizer.
+    - Protect from pests and diseases with appropriate treatments.
+  cucumber:
+    - Plant in full sun with fertile, well-drained soil.
+    - Water consistently, keeping the soil evenly moist.
+    - Use trellises or supports to keep vines off the ground.
+    - Harvest cucumbers regularly to encourage continued production.
+    - Rotate crops to avoid soil-borne diseases.
+  potato:
+    - Plant in loose, well-drained soil with plenty of organic matter.
+    - Water regularly, especially during tuber formation.
+    - Hill soil around plants to protect tubers from sunlight.
+    - Harvest when plants begin to yellow and die back.
+    - Store harvested potatoes in a cool, dark place.
+  strawberry_leaves:
+    - Choose a sunny location with well-drained soil.
+    - Mulch around plants to retain moisture and suppress weeds.
+    - Water regularly, avoiding overhead watering to reduce disease risk.
+    - Fertilize with a balanced fertilizer during the growing season.
+    - Protect from pests and birds with netting or row covers.
+  strawberry_fruit:
+    - Choose a sunny location with well-drained soil.
+    - Mulch around plants to retain moisture and suppress weeds.
+    - Water regularly, avoiding overhead watering to reduce disease risk.
+    - Fertilize with a balanced fertilizer during the growing season.
+    - Protect from pests and birds with netting or row covers.
+  tomato:
+    - Plant in full sun with fertile, well-drained soil.
+    - Water consistently, keeping the soil evenly moist.
+    - Use stakes or cages to support plants as they grow.
+    - Prune suckers to improve air circulation and fruit production.
+    - Fertilize with a balanced fertilizer every few weeks.
+  lettuce:
+    - Plant in a location with partial shade and well-drained soil.
+    - Water regularly, keeping the soil consistently moist.
+    - Harvest leaves as needed, starting with the outer leaves.
+    - Mulch around plants to retain moisture and suppress weeds.
+    - Rotate crops to avoid soil-borne diseases.
+  grapes:
+    - Plant in full sun with well-drained soil.
+    - Prune vines annually to maintain their shape and improve fruit production.
+    - Water regularly, especially during dry periods.
+    - Fertilize in the early spring with a balanced fertilizer.
+    - Protect from pests and diseases with appropriate treatments.
+  orange:
+    - Plant in full sun with well-drained soil.
+    - Water regularly, especially during dry periods.
+    - Fertilize with a balanced citrus fertilizer every few months.
+    - Prune trees to maintain their shape and remove dead branches.
+    - Protect from pests and diseases with appropriate treatments.
