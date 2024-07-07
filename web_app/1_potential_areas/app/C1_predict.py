@@ -10,6 +10,10 @@ from handler import load_model
 root_path = Path(__file__).parent.parent.parent.parent
 models_path = root_path.joinpath("web_app/1_potential_areas/app/models")
 
+# Default lat, long values to be displayed in map
+default_latitude = 45.45
+default_longitude = 9.20
+
 # Load models
 supervised_model = load_model(models_path.joinpath("XGBClassifier_Pipeline_Optuna_Vidhi.pkl"))
 unsupervised_model = load_model(models_path.joinpath("kmeans_model_pipeline.pkl"))
@@ -64,9 +68,9 @@ def run_app():
     # Input fields arranged in rows of four
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        latitude = st.number_input("Latitude")
+        latitude = st.number_input("Latitude", value = default_latitude)
     with col2:
-        longitude = st.number_input("Longitude")
+        longitude = st.number_input("Longitude", value = default_longitude)
     with col3:
         roughness = st.number_input("Roughness")
     with col4:
@@ -135,21 +139,22 @@ def run_app():
     folium_static(map)
 
     # Model selection
+    models = ["Supervised Model : XGBClassifier", "Unsupervised Model : KmeansClassifier"]
     model_type = st.selectbox(
         "Select Model",
-        ["Supervised Model : XGBClassifier", "Unsupervised Model : KmeansClassifier"],
+        models,
     )
 
     # Model mapping
     model = (
         supervised_model
-        if model_type == "Supervised Model : XGBClassifier"
+        if model_type == models[0]
         else unsupervised_model
     )
 
     # Predict button
     if st.button("Predict"):
-        if model_type == "Supervised Model : XGBClassifier":
+        if model_type ==models[0]:
             features = pd.DataFrame(
                 {
                     "SMI": [smi],
