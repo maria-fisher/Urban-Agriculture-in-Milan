@@ -1,0 +1,129 @@
+apple:
+  center_crop: 240
+  class_map:
+    0: healthy
+    1: rust
+    2: scab
+  dropout: 0.3
+  energy_threshold: -0.9060400271415708
+  hidden_units: 512
+  model_name: efficientnet_b1
+  num_classes: 3
+  resize: 256
+cucumber:
+  center_crop: 224
+  class_map:
+    0: Anthracnose_Fungi
+    1: Bacterial_Wilt_Bacteria
+    2: Belly_Rot_Fungi
+    3: Downy_Mildew_Fungi
+    4: Gummy_Stem_Blight_Fungi
+    5: Healthy_Cucumber
+    6: Healthy_Leaf
+    7: Pythium_Fruit_Rot_Fungi
+  dropout: 0.3
+  energy_threshold: -2.731144151687622
+  hidden_units: 512
+  model_name: resnet50
+  num_classes: 8
+  resize: 256
+grapes:
+  center_crop: 240
+  class_map:
+    0: black_measles
+    1: black_rot
+    2: healthy
+    3: isariopsis_leaf_spot
+  dropout: 0.3
+  energy_threshold: -2.951233386993408
+  hidden_units: 512
+  model_name: efficientnet_b1
+  num_classes: 4
+  resize: 256
+lettuce:
+  center_crop: 224
+  class_map:
+    0: Downy_Mildew
+    1: Shoot_Blight
+    2: healthy
+  dropout: 0.3
+  energy_threshold: -1.2566323280334473
+  hidden_units: 512
+  model_name: resnet18
+  num_classes: 3
+  resize: 256
+orange:
+  center_crop: 600
+  class_map:
+    0: black_spot
+    1: canker
+    2: greening
+    3: scab
+    4: bacteria_citrus
+    5: fungus_penicillium
+    6: healthy
+    7: pest_psyllid
+  dropout: 0.3
+  energy_threshold: -2.3375077962875355
+  hidden_units: 512
+  model_name: efficientnet_b7
+  num_classes: 8
+  resize: 600
+potato:
+  center_crop: 224
+  class_map:
+    0: black_scurf
+    1: colorado_potato_beetle
+    2: common_scab
+    3: healthy
+  dropout: 0.3
+  energy_threshold: -1.5349812507629395
+  hidden_units: 512
+  model_name: efficientnet_b0
+  num_classes: 4
+  resize: 256
+strawberry_fruit:
+  center_crop: 300
+  class_map:
+    0: anthracnose_fruit_rot_fungus
+    1: blossom_blight_flower_fungus
+    2: gray_mold_fruit_fungus
+    3: powdery_mildew_fruit_fungus
+  dropout: 0.3
+  energy_threshold: -2.488226816654205
+  hidden_units: 512
+  model_name: efficientnet_b3
+  num_classes: 4
+  resize: 320
+strawberry_leaves:
+  center_crop: 224
+  class_map:
+    0: angular_leaf_spots_bacteria
+    1: healthy
+    2: leaf_scorch_fungus
+    3: leaf_spot_fungus
+  dropout: 0.3
+  energy_threshold: -2.6009414196014404
+  hidden_units: 512
+  model_name: efficientnet_b0
+  num_classes: 4
+  resize: 256
+tomato:
+  center_crop: 240
+  class_map:
+    0: bacterial_spot
+    1: early_blight
+    2: healthy
+    3: late_blight
+    4: leaf_mold
+    5: mosaic_virus
+    6: septoria_leaf_spot
+    7: target_spot
+    8: two_spotted_spider_mite
+    9: yellow_leaf_curl_virus
+  dropout: 0.3
+  energy_threshold: -2.725726842880249
+  hidden_units: 512
+  model_name: efficientnet_b1
+  num_classes: 10
+  resize: 256
