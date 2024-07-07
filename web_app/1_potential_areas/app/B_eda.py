@@ -1,26 +1,16 @@
 import streamlit as st
 import streamlit.components.v1 as components
-import pandas as pd
 import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 from pathlib import Path
+from handler import read_parquet, LOOKER_URL
 
 
-# Root Path
+# Path
 root_path = Path(__file__).parent.parent.parent.parent
 data_dir = root_path.joinpath("web_app/1_potential_areas/app/dataset")
 data_path = "merged_2023.parquet"
-
-
-@st.cache_data
-def read_parquet(filename):
-    df = pd.read_parquet(
-        data_dir.joinpath(filename),
-        engine="pyarrow",
-        dtype_backend="pyarrow",
-    )
-    return df
 
 # Function to classify vegetation based on NDVI value
 def classify_vegetation(ndvi):
@@ -80,30 +70,11 @@ def plot_scatter(df):
         "Select Zone(s)", options=["zone4", "zone9"], default=["zone4", "zone9"]
     )
     filtered_df = df[df["Zone"].isin(selected_zones)]
-    x_axis = "Longitude"
-    y_axis = "Latitude"
-    labels = {
-        "longitude": "Longitude",
-        "latitude": "Latitude",
-        "class": "Vegetation Class",
-    }
-    colors = {"Class1": "blue", "Class2": "green", "Class3": "red"}
-    fig = px.scatter(
-        filtered_df,
-        x=x_axis,
-        y=y_axis,
-        color="class",
-        labels=labels,
-        color_discrete_map=colors,
-    )
-
-    # Customize the layout
-    fig.update_layout(
-        legend=dict(title="Vegetation Class"),
-        xaxis=dict(title="Longitude"),
-        yaxis=dict(title="Latitude"),
-        hovermode="closest",
-    )
+    if filtered_df.empty:
+        st.warning("No data available for the selected zones or No Zone selected.")
+        return None
+    fig = px.scatter_mapbox(filtered_df, lat = 'Latitude', lon="Longitude", color="class", zoom=10)
+    fig.update_layout(mapbox_style = 'open-street-map', margin={"r":0,"t":0,"l":0,"b":0})
     return fig
 
 def plot_bar(df):
@@ -117,7 +88,7 @@ def plot_bar(df):
     class_counts = filtered_df["class"].value_counts().reset_index()
     class_counts.columns = ["class", "count"]
     x_axis = "class"
-    labels = {"class": "Class", "count": "Count"}
+    labels = {"class": "Vegetation Class", "count": "Count"}
     fig = px.bar(
         class_counts,
         x=x_axis,
@@ -127,8 +98,7 @@ def plot_bar(df):
         color_discrete_sequence=["#00b6cb"],
     )
     # Customize the layout
-    fig.update_layout(
-        xaxis=dict(title="Class"), yaxis=dict(title="Count"), showlegend=False
+    fig.update_layout(showlegend=False
     )
     return fig
 
@@ -144,20 +114,17 @@ def eda_page():
     Techniques used include remote sensing, GIS analysis, and environmental monitoring.
     """)
 
-    # Looker Studio report URL
-    report_url = "https://lookerstudio.google.com/embed/reporting/eaab71cb-575f-4f7c-b9ac-97942e43d017/page/r2W2D"
-
     # Create the iframe HTML
     iframe_code = f"""
-    <iframe width="100%" height="1000" src="{report_url}" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+    <iframe width="100%" height="1000" src="{LOOKER_URL}" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
     """
 
     # Display the iframe using Streamlit's components.html function
     components.html(iframe_code, height=1000)
 
-    # Read CSVs
-    # loading ndvi, ndbi and bu(built-up)
-    data = read_parquet(data_path)
+    # Read data
+    filepath = data_dir.joinpath(data_path)
+    data = read_parquet(filepath)
 
     # Apply the classification function to the NDVI column and create a class column
     data["class"] = data["NDVI"].apply(classify_vegetation)
@@ -184,7 +151,9 @@ def eda_page():
     # Scatter plot
     with st.expander("Scatter Plot of Geographical Distribution of Vegetation Classes"):
         scatter_vegetation = plot_scatter(data)
-        st.plotly_chart(scatter_vegetation, theme="streamlit", use_container_width=True)
+        # Display the map in Streamlit
+        if scatter_vegetation:
+            st.plotly_chart(scatter_vegetation)
 
     # Bar chart
     with st.expander("Bar Chart of Distribution of Vegetation Classes"):

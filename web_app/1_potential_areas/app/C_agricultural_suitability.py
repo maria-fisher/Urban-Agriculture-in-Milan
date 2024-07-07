@@ -53,7 +53,7 @@ def show_main_page():
     
     if st.button("Predict using All the Values"):
         st.session_state.page = "supervised"
-        st.experimental_rerun()
+        st.rerun()
     
     st.markdown("""
     <div class="custom-text">
@@ -64,7 +64,7 @@ def show_main_page():
     
     if st.button("Predict using only Latitude and Longitude"):
         st.session_state.page = "unsupervised"
-        st.experimental_rerun()
+        st.rerun()
 
 
 def predict_using_all():

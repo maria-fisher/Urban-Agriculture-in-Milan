@@ -1,8 +1,6 @@
-import pickle
-import numpy as np
 import pandas as pd
 import streamlit as st
-from data_fetcher import DataFetcher
+from handler import DataFetcher, load_model
 from pathlib import Path
 
 # PATH
@@ -10,13 +8,6 @@ root_path = Path(__file__).parent.parent.parent.parent
 task_path = root_path.joinpath("web_app/1_potential_areas/app")
 models_path = task_path.joinpath("models")
 data_path = task_path.joinpath("dataset")
-
-# Load the models 
-def load_model(model_path):
-    with open(model_path, "rb") as f:
-        model = pickle.load(f)
-    return model
-
 
 # Load the trained model
 model = load_model(models_path.joinpath("XGBClassifier_Pipeline_Optuna_Vidhi.pkl"))
